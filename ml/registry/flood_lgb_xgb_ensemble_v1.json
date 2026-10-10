@@ -1,0 +1,156 @@
+{
+  "model_id": "flood_lgb_xgb_ensemble_v1",
+  "model_type": "regression_ensemble",
+  "dataset": "urban_flood_bench",
+  "dataset_description": "1D/2D urban flood network simulation",
+  "training_date": "2026-10-04T01:35:57.802760",
+  "training_duration_seconds": 11.6,
+  "split_strategy": "TEMPORAL (train on earlier timesteps, no future leakage)",
+  "split_sizes": {
+    "train": 1054,
+    "val": 221,
+    "test": 238
+  },
+  "features": {
+    "count": 23,
+    "top_features": [
+      {
+        "name": "water_level_lag_1",
+        "importance": 1595449.9882531953
+      },
+      {
+        "name": "water_level_lag_2",
+        "importance": 369669.61022809765
+      },
+      {
+        "name": "water_level_lag_3",
+        "importance": 121278.35996336176
+      },
+      {
+        "name": "position_x",
+        "importance": 110467.39753727597
+      },
+      {
+        "name": "water_level_rolling_mean_3",
+        "importance": 83253.37965783224
+      },
+      {
+        "name": "position_y",
+        "importance": 67600.71305170462
+      },
+      {
+        "name": "water_level_lag_5",
+        "importance": 12321.914223523983
+      },
+      {
+        "name": "depth",
+        "importance": 5771.348626978702
+      },
+      {
+        "name": "water_level_rolling_max_5",
+        "importance": 5350.043404830256
+      },
+      {
+        "name": "in_degree",
+        "importance": 2649.167349026393
+      },
+      {
+        "name": "surface_elevation",
+        "importance": 665.8872657270622
+      },
+      {
+        "name": "water_level_diff_2",
+        "importance": 231.97906463314064
+      },
+      {
+        "name": "total_degree",
+        "importance": 214.90111556183547
+      },
+      {
+        "name": "inlet_flow",
+        "importance": 132.0447791196516
+      },
+      {
+        "name": "water_level_diff_1",
+        "importance": 50.838930177138536
+      },
+      {
+        "name": "water_level_rolling_std_3",
+        "importance": 31.853270563017645
+      },
+      {
+        "name": "inlet_flow_lag_3",
+        "importance": 1.5848271320555796
+      },
+      {
+        "name": "invert_elevation",
+        "importance": 1.1047047380245658
+      },
+      {
+        "name": "inlet_flow_lag_2",
+        "importance": 0.8155196559309843
+      },
+      {
+        "name": "inlet_flow_rolling_mean_3",
+        "importance": 0.7606465547869448
+      }
+    ]
+  },
+  "lightgbm": {
+    "best_iteration": 389,
+    "metrics": {
+      "val": {
+        "rmse": 0.0480379970758316,
+        "mae": 0.028846572258201652,
+        "r2": 0.9999920289976785,
+        "nse": 0.9999920289976785
+      },
+      "test": {
+        "rmse": 0.05094467268353071,
+        "mae": 0.03399217772691507,
+        "r2": 0.999991038448638,
+        "nse": 0.999991038448638
+      }
+    }
+  },
+  "xgboost": {
+    "metrics": {
+      "test": {
+        "rmse": 0.1825628486667012,
+        "mae": 0.11788305060891313,
+        "r2": 0.9998849171911657,
+        "nse": 0.9998849171911657
+      }
+    }
+  },
+  "ensemble": {
+    "lgb_weight": 1.0,
+    "xgb_weight": 0.0,
+    "metrics": {
+      "rmse": 0.05094467268353071,
+      "mae": 0.03399217772691507,
+      "r2": 0.999991038448638,
+      "nse": 0.999991038448638
+    }
+  },
+  "uncertainty": {
+    "method": "quantile_regression",
+    "quantiles": [
+      "P10",
+      "P50",
+      "P90"
+    ],
+    "coverage_80pct": 0.8067226890756303,
+    "mean_interval_width": 5.854068131854419
+  },
+  "artifacts": {
+    "lightgbm_model": "C:\\Users\\Aryan kumar\\Downloads\\reality-sculptor\\ml\\models\\flood\\flood_lightgbm_v1.bin",
+    "preprocessing": "C:\\Users\\Aryan kumar\\Downloads\\reality-sculptor\\ml\\models\\flood\\flood_preprocessing_pipeline.json"
+  },
+  "limitations": [
+    "Trained on single urban flood simulation -- generalization to different cities unknown",
+    "Requires lag features (at least 5 previous timesteps) for inference",
+    "Does not include rainfall input features (dataset limitation)"
+  ],
+  "seed": 42
+}

@@ -1,0 +1,92 @@
+{
+  "model_id": "traffic_lightgbm_metrla_v1",
+  "model_type": "regression",
+  "architecture": "lightgbm",
+  "dataset": "metr_la",
+  "dataset_description": "Los Angeles traffic speed sensors, 207 nodes, 4 months, 5-min intervals",
+  "training_date": "2026-10-04T02:17:45.660178",
+  "training_duration_seconds": 21.1,
+  "best_iteration": 75,
+  "split_strategy": "TEMPORAL (train on earlier timesteps, no future leakage)",
+  "features": {
+    "count": 25,
+    "sequence_length": 12,
+    "prediction_horizon": 1,
+    "top_features": [
+      {
+        "name": "speed_lag_1",
+        "importance": 3355895573.4936523
+      },
+      {
+        "name": "speed_lag_2",
+        "importance": 532375397.7692871
+      },
+      {
+        "name": "speed_mean_6",
+        "importance": 131347875.09790039
+      },
+      {
+        "name": "speed_lag_3",
+        "importance": 30712449.789794922
+      },
+      {
+        "name": "global_std_speed",
+        "importance": 24264186.536376953
+      },
+      {
+        "name": "global_mean_speed",
+        "importance": 21898475.922851562
+      },
+      {
+        "name": "speed_diff_1",
+        "importance": 20839429.592041016
+      },
+      {
+        "name": "speed_std_6",
+        "importance": 17758411.948486328
+      },
+      {
+        "name": "speed_median_12",
+        "importance": 13802015.847167969
+      },
+      {
+        "name": "speed_diff_3",
+        "importance": 12535700.604736328
+      }
+    ]
+  },
+  "metrics": {
+    "metr_la_val": {
+      "rmse": 9.520129654116118,
+      "mae": 4.571100514540473,
+      "mape": 9.609556599668434,
+      "r2": 0.7894812043037487
+    },
+    "metr_la_test": {
+      "rmse": 9.478173814538321,
+      "mae": 4.658902890639355,
+      "mape": 9.707651379840069,
+      "r2": 0.8303550383705558
+    },
+    "pems_bay_unseen_region": {
+      "rmse": 3.8903383515620225,
+      "mae": 2.1095370385061507,
+      "mape": 4.430034124076591,
+      "r2": 0.8470682326657475
+    }
+  },
+  "spatial_generalization": {
+    "trained_on": "METR-LA (Los Angeles)",
+    "tested_on": "PEMS-BAY (San Francisco Bay Area)",
+    "rmse_degradation_pct": -58.95476884381742
+  },
+  "artifacts": {
+    "model_path": "C:\\Users\\Aryan kumar\\Downloads\\reality-sculptor\\ml\\models\\traffic\\traffic_lightgbm_metrla_v1.bin"
+  },
+  "limitations": [
+    "Trained on METR-LA (LA) traffic patterns -- may not generalize to non-US road networks",
+    "5-minute interval data -- may not capture sub-minute dynamics",
+    "Speed only -- does not predict flow/occupancy"
+  ],
+  "seed": 42
+}

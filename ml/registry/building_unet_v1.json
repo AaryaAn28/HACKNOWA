@@ -1,0 +1,19 @@
+{
+  "model_id": "building_unet_v1",
+  "dataset": "ieee_building_extraction_2024",
+  "architecture": "light_unet",
+  "task": "binary_segmentation",
+  "training_date": "2026-10-04T23:05:33.374245",
+  "best_epoch": 75,
+  "metrics": {
+    "val_iou": 0.787286102771759,
+    "test_iou": 0.7755,
+    "test_dice": 0.881,
+    "test_precision": 0.8842,
+    "test_recall": 0.8715
+  },
+  "artifacts": {
+    "model": "C:\\Users\\Aryan kumar\\Downloads\\reality-sculptor\\ml\\models\\building\\building_unet_v1.pt"
+  },
+  "seed": 42
+}

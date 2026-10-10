@@ -1,0 +1,17 @@
+{
+  "model_id": "multimodal_fusion_v1",
+  "architecture": "contrastive_fusion_mlp",
+  "embedding_dim": 128,
+  "training_method": "self-supervised contrastive (InfoNCE)",
+  "training_date": "2026-10-04T21:56:23.199803",
+  "training_duration_seconds": 7.6,
+  "verification": {
+    "same_sim": 0.999997079372406,
+    "diff_sim": 0.9071092009544373,
+    "valid": true
+  },
+  "artifacts": {
+    "model": "C:\\Users\\Aryan kumar\\Downloads\\reality-sculptor\\ml\\models\\fusion\\multimodal_fusion_v1.pt"
+  },
+  "seed": 42
+}

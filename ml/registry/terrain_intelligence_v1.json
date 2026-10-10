@@ -1,0 +1,75 @@
+{
+  "model_id": "terrain_intelligence_v1",
+  "model_type": "regression",
+  "architecture": "lightgbm",
+  "dataset": "landslide4sense_alos_dem",
+  "training_date": "2026-10-04T22:26:23.357916",
+  "training_duration_seconds": 27.8,
+  "best_iteration": 816,
+  "split_strategy": "spatial_group (disjoint ALOS DEM patches)",
+  "features": {
+    "count": 9,
+    "columns": [
+      "elevation",
+      "slope",
+      "aspect",
+      "curvature",
+      "roughness",
+      "elev_mean_3x3",
+      "elev_std_3x3",
+      "elev_range_3x3",
+      "relative_elevation"
+    ],
+    "importances": [
+      {
+        "name": "curvature",
+        "gain": 0.0008536209236134596
+      },
+      {
+        "name": "relative_elevation",
+        "gain": 1.7811768304731856e-05
+      },
+      {
+        "name": "elevation",
+        "gain": 0.0
+      },
+      {
+        "name": "slope",
+        "gain": 0.0
+      },
+      {
+        "name": "aspect",
+        "gain": 0.0
+      },
+      {
+        "name": "roughness",
+        "gain": 0.0
+      },
+      {
+        "name": "elev_mean_3x3",
+        "gain": 0.0
+      },
+      {
+        "name": "elev_std_3x3",
+        "gain": 0.0
+      },
+      {
+        "name": "elev_range_3x3",
+        "gain": 0.0
+      }
+    ]
+  },
+  "metrics": {
+    "val_rmse": 7.257064205039202e-05,
+    "val_mae": 2.8759023223048352e-05,
+    "val_r2": 0.8025828383307249,
+    "test_rmse": 7.049278876076662e-05,
+    "test_mae": 2.738523269081404e-05,
+    "test_r2": 0.803071047515707
+  },
+  "artifacts": {
+    "model_path": "C:\\Users\\Aryan kumar\\Downloads\\reality-sculptor\\ml\\models\\terrain\\terrain_intelligence_v1.bin",
+    "pipeline": "C:\\Users\\Aryan kumar\\Downloads\\reality-sculptor\\ml\\models\\terrain\\terrain_pipeline.json"
+  },
+  "seed": 42
+}

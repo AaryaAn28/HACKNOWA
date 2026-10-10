@@ -1,0 +1,33 @@
+{
+  "model_id": "landcover_resnet18_v1",
+  "dataset": "eurosat",
+  "architecture": "resnet18_transfer",
+  "task": "multiclass_classification",
+  "num_classes": 10,
+  "classes": [
+    "AnnualCrop",
+    "Forest",
+    "HerbaceousVegetation",
+    "Highway",
+    "Industrial",
+    "Pasture",
+    "PermanentCrop",
+    "Residential",
+    "River",
+    "SeaLake"
+  ],
+  "training_date": "2026-10-04T23:05:33.801903",
+  "best_epoch": 32,
+  "metrics": {
+    "val_acc": 0.9658415841584158,
+    "test_acc": 0.9581,
+    "test_macro_f1": 0.9589,
+    "test_precision": 0.9612,
+    "test_recall": 0.9578,
+    "val_loss": 0.1946692280545093
+  },
+  "artifacts": {
+    "model": "C:\\Users\\Aryan kumar\\Downloads\\reality-sculptor\\ml\\models\\landcover\\landcover_resnet18_v1_production.pt"
+  },
+  "seed": 42
+}

@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Heavy Raw Datasets and Model Checkpoints (>30MB causing HTTP 408 timeout on push)
+ml/datasets/raw/
+ml/datasets/*.csv
+ml/datasets/*.parquet
+ml/datasets/*.h5
+ml/checkpoints/
+*.pt
+
+
+# Intermediate testing and cache
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

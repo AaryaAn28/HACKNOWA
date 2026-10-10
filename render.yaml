@@ -1,0 +1,27 @@
+# ============================================================
+# Reality Sculptor — Render.com Blueprint Specification
+# ============================================================
+# Use this Blueprint to deploy Reality Sculptor to Render in 1 click.
+# Documentation: https://render.com/docs/blueprint-spec
+
+services:
+  # Primary Cyber-Physical Web Service
+  - type: web
+    name: reality-sculptor
+    runtime: python
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: python run.py
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DEMO_MODE
+        value: true
+      - key: LOG_LEVEL
+        value: INFO
+      - key: HOST
+        value: 0.0.0.0

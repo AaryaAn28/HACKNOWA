@@ -1,0 +1,86 @@
+{
+  "manifest_version": "2.0.0",
+  "timestamp": "2026-10-03T18:04:32Z",
+  "curator": "Reality Sculptor Physical World Engine",
+  "datasets": [
+    {
+      "id": "osm_vector_extracts",
+      "name": "OpenStreetMap Regional Extracts",
+      "source": "OpenStreetMap Contributors / Overpass API",
+      "license": "ODbL 1.0 (Open Database License)",
+      "status": "DOWNLOADED_ACTIVE",
+      "coverage": "Houston, Chennai, Guwahati Urban Extents",
+      "files": [
+        {
+          "path": "data\\raw\\houston_medical_center_osm_raw.json",
+          "sha256": "b4c79d1ba8ffdd005d53d4c77d438d3624718d839e5af174f67bb00fbca25ac8",
+          "size_bytes": 60611
+        },
+        {
+          "path": "data\\processed\\houston_medical_center_spatial_entities.json",
+          "sha256": "8b44688cee37143de33f688e19ca0e4339aa69eb8ca959e3f2c5d1bf7744ca03",
+          "size_bytes": 39691
+        },
+        {
+          "path": "data\\raw\\chennai_velachery_osm_raw.json",
+          "sha256": "882b6008772e8e74d2695cca9ea677dea30fef2ba80722d0983cd2a07049b396",
+          "size_bytes": 12365876
+        },
+        {
+          "path": "data\\processed\\chennai_velachery_spatial_entities.json",
+          "sha256": "9e7432c50beb47ece75f2577ee2de3e6d03fe032bb9d1cf800c241342a112cd2",
+          "size_bytes": 9491236
+        },
+        {
+          "path": "data\\raw\\guwahati_bharalu_osm_raw.json",
+          "sha256": "eb5aa095bd049815ba06213cf8009b37c96dce3142887f034066318f05aadda7",
+          "size_bytes": 1724320
+        },
+        {
+          "path": "data\\processed\\guwahati_bharalu_spatial_entities.json",
+          "sha256": "7474c37d76baf5f00e795e5fffd5d8990bdf490268e6a6fa557e2ad2116e18f7",
+          "size_bytes": 1225237
+        }
+      ]
+    },
+    {
+      "id": "copernicus_dem_glo30",
+      "name": "Copernicus Digital Elevation Model GLO-30",
+      "source": "European Space Agency (ESA) / Airbus",
+      "license": "Copernicus Free & Open Data Policy",
+      "status": "INTERPOLATED_ACTIVE",
+      "resolution": "30-meter global terrain",
+      "bounds": "Global Coverage"
+    },
+    {
+      "id": "nasa_gpm_imerg",
+      "name": "NASA Global Precipitation Measurement (GPM) IMERG",
+      "source": "NASA GES DISC / Goddard Space Flight Center",
+      "license": "NASA Open Data Policy",
+      "status": "CALIBRATED_ACTIVE",
+      "resolution": "0.1 deg / 30-min precipitation"
+    },
+    {
+      "id": "overture_maps",
+      "name": "Overture Maps Transportation & Buildings Theme",
+      "source": "Overture Maps Foundation (Linux Foundation)",
+      "license": "CDLA Permissive v2.0",
+      "status": "DOWNLOADED_ACTIVE"
+    },
+    {
+      "id": "isro_bhuvan_wms",
+      "name": "ISRO Bhuvan Geo-Platform LULC / Elevation",
+      "source": "National Remote Sensing Centre (NRSC) / ISRO",
+      "license": "Government of India National Geospatial Policy",
+      "status": "REQUIRES_ACCESS",
+      "access_note": "Requires ISRO Bhuvan registered institutional API key"
+    },
+    {
+      "id": "india_data_gov_rainfall",
+      "name": "India Meteorological Department Historical Sub-Divisional Rainfall",
+      "source": "data.gov.in (Open Government Data Platform India)",
+      "license": "Government Open Data License - India (GODL)",
+      "status": "DOWNLOADED_ACTIVE"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "model_id": "drainage_cso_lightgbm_v1",
+  "dataset": "nysdec_cso",
+  "architecture": "lightgbm",
+  "task": "regression (overflow event count prediction)",
+  "training_date": "2026-10-04T02:22:16.405447",
+  "training_duration_seconds": 0.4,
+  "split": "spatial_group_kfold (5 folds, leave-county-out)",
+  "metrics": {
+    "oof_rmse": 25.468625295038567,
+    "oof_mae": 18.608739291315544,
+    "oof_r2": -0.056911618267857955,
+    "fold_details": [
+      {
+        "fold": 0,
+        "rmse": 23.960814805006294,
+        "mae": 19.680141931600243,
+        "r2": -1.0555261515691723,
+        "val_counties": [
+          "Cayuga",
+          "Dutchess",
+          "Rensselaer"
+        ]
+      },
+      {
+        "fold": 1,
+        "rmse": 38.00318458058151,
+        "mae": 18.201059498376864,
+        "r2": -0.00311996587594332,
+        "val_counties": [
+          "Greene",
+          "Oneida",
+          "Saratoga"
+        ]
+      },
+      {
+        "fold": 2,
+        "rmse": 22.116853955478213,
+        "mae": 20.417579872503556,
+        "r2": -0.12180641072562093,
+        "val_counties": [
+          "Clinton",
+          "Erie",
+          "Monroe"
+        ]
+      },
+      {
+        "fold": 3,
+        "rmse": 18.86861353896172,
+        "mae": 16.182519338379052,
+        "r2": -0.034030823758546935,
+        "val_counties": [
+          "Albany",
+          "Broome",
+          "Madison"
+        ]
+      },
+      {
+        "fold": 4,
+        "rmse": 19.517522613295267,
+        "mae": 18.54483183800842,
+        "r2": -5.421200187645488,
+        "val_counties": [
+          "Chemung",
+          "Essex",
+          "Herkimer"
+        ]
+      }
+    ]
+  },
+  "features": [
+    "Number of Permitted Outfalls",
+    "Latitude",
+    "Longtitude",
+    "DEC Region_encoded",
+    "County_encoded",
+    "Discharge Activation Type_encoded",
+    "lat_rounded",
+    "lon_rounded"
+  ],
+  "artifacts": {
+    "model": "C:\\Users\\Aryan kumar\\Downloads\\reality-sculptor\\ml\\models\\drainage\\drainage_cso_lightgbm_v1.bin"
+  },
+  "seed": 42
+}

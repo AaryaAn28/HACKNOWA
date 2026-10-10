@@ -1,0 +1,209 @@
+{
+  "schema_version": "2.0.0",
+  "description": "Ground-truth semantic 3D classes supported by available datasets and trained models",
+  "domains": {
+    "terrain": {
+      "description": "Topographical surface layers from ALOS DEM and Landslide4Sense",
+      "classes": [
+        {
+          "class_name": "TERRAIN_SURFACE",
+          "geometry_type": "HeightmapMesh",
+          "provenance_default": "DERIVED",
+          "source_dataset": "ALOS_DEM_30M"
+        },
+        {
+          "class_name": "DEPRESSION_BASIN",
+          "geometry_type": "PolygonVolume",
+          "provenance_default": "DERIVED",
+          "source_dataset": "Terrain_D8_Analysis"
+        },
+        {
+          "class_name": "SLOPE_HAZARD_ZONE",
+          "geometry_type": "PolygonOverlay",
+          "provenance_default": "ESTIMATED",
+          "model_id": "landslide_resnet18_v1",
+          "source_dataset": "Landslide4Sense"
+        }
+      ]
+    },
+    "structures": {
+      "description": "Building envelopes and structural footprints",
+      "classes": [
+        {
+          "class_name": "BUILDING_RESIDENTIAL",
+          "geometry_type": "ExtrudedFootprint",
+          "provenance_default": "OBSERVED",
+          "source_dataset": "MS_Building_Footprints"
+        },
+        {
+          "class_name": "BUILDING_COMMERCIAL",
+          "geometry_type": "ExtrudedFootprint",
+          "provenance_default": "OBSERVED",
+          "source_dataset": "MS_Building_Footprints"
+        },
+        {
+          "class_name": "BUILDING_INDUSTRIAL",
+          "geometry_type": "ExtrudedFootprint",
+          "provenance_default": "OBSERVED",
+          "source_dataset": "MS_Building_Footprints"
+        },
+        {
+          "class_name": "BUILDING_EXTRACTED",
+          "geometry_type": "SegmentedMaskToPolygon",
+          "provenance_default": "ESTIMATED",
+          "model_id": "building_unet_v1",
+          "source_dataset": "IEEE_Building_Extraction"
+        }
+      ]
+    },
+    "transportation": {
+      "description": "Roadway hierarchies, intersections, and corridors",
+      "classes": [
+        {
+          "class_name": "ROAD_MOTORWAY",
+          "geometry_type": "SplineCorridor",
+          "lanes": 6,
+          "width_m": 24.0,
+          "provenance_default": "OBSERVED",
+          "source_dataset": "OpenStreetMap"
+        },
+        {
+          "class_name": "ROAD_PRIMARY",
+          "geometry_type": "SplineCorridor",
+          "lanes": 4,
+          "width_m": 16.0,
+          "provenance_default": "OBSERVED",
+          "source_dataset": "OpenStreetMap"
+        },
+        {
+          "class_name": "ROAD_SECONDARY",
+          "geometry_type": "SplineCorridor",
+          "lanes": 2,
+          "width_m": 10.0,
+          "provenance_default": "OBSERVED",
+          "source_dataset": "OpenStreetMap"
+        },
+        {
+          "class_name": "ROAD_RESIDENTIAL",
+          "geometry_type": "SplineCorridor",
+          "lanes": 2,
+          "width_m": 7.0,
+          "provenance_default": "OBSERVED",
+          "source_dataset": "OpenStreetMap"
+        },
+        {
+          "class_name": "TRAFFIC_CORRIDOR_SEGMENT",
+          "geometry_type": "SplineWithSpeedVector",
+          "provenance_default": "ESTIMATED",
+          "model_id": "traffic_lightgbm_metrla_v1",
+          "source_dataset": "METR_LA"
+        }
+      ]
+    },
+    "land_cover": {
+      "description": "Surface vegetative and functional zoning",
+      "classes": [
+        {
+          "class_name": "LANDCOVER_FOREST",
+          "geometry_type": "PCGZone",
+          "provenance_default": "ESTIMATED",
+          "model_id": "landcover_resnet18_v1",
+          "source_dataset": "EuroSAT"
+        },
+        {
+          "class_name": "LANDCOVER_HERBACEOUS",
+          "geometry_type": "PCGZone",
+          "provenance_default": "ESTIMATED",
+          "model_id": "landcover_resnet18_v1",
+          "source_dataset": "EuroSAT"
+        },
+        {
+          "class_name": "LANDCOVER_AGRICULTURAL",
+          "geometry_type": "SurfaceTextureZone",
+          "provenance_default": "ESTIMATED",
+          "model_id": "landcover_resnet18_v1",
+          "source_dataset": "EuroSAT"
+        },
+        {
+          "class_name": "LANDCOVER_IMPERVIOUS",
+          "geometry_type": "SurfaceTextureZone",
+          "provenance_default": "ESTIMATED",
+          "model_id": "landcover_resnet18_v1",
+          "source_dataset": "EuroSAT"
+        }
+      ]
+    },
+    "hydrology": {
+      "description": "Surface waterbodies and dynamic hydrodynamic inundation",
+      "classes": [
+        {
+          "class_name": "WATERBODY_RIVER",
+          "geometry_type": "RibbonMesh",
+          "provenance_default": "OBSERVED",
+          "source_dataset": "OpenStreetMap"
+        },
+        {
+          "class_name": "WATERBODY_LAKE",
+          "geometry_type": "PlanarPolygonMesh",
+          "provenance_default": "OBSERVED",
+          "source_dataset": "OpenStreetMap"
+        },
+        {
+          "class_name": "WATERBODY_CANAL",
+          "geometry_type": "RibbonChannelMesh",
+          "provenance_default": "OBSERVED",
+          "source_dataset": "OpenStreetMap"
+        },
+        {
+          "class_name": "FLOOD_INUNDATION_CELL",
+          "geometry_type": "DynamicHeightCell",
+          "provenance_default": "SIMULATED",
+          "model_id": "flood_lightgbm_v1",
+          "source_dataset": "UrbanFloodBench"
+        }
+      ]
+    },
+    "underground_subsurface": {
+      "description": "Underground pipe conduits, manholes, inlets, and outfalls",
+      "classes": [
+        {
+          "class_name": "SEWER_PIPE_CIRCULAR",
+          "geometry_type": "CylinderExtrusion",
+          "provenance_default": "OBSERVED",
+          "source_dataset": "UrbanFloodBench"
+        },
+        {
+          "class_name": "DRAINAGE_CHANNEL_RECT",
+          "geometry_type": "PrismaticConduit",
+          "provenance_default": "OBSERVED",
+          "source_dataset": "UrbanFloodBench"
+        },
+        {
+          "class_name": "SEWER_MANHOLE",
+          "geometry_type": "VerticalShaftWithCover",
+          "provenance_default": "OBSERVED",
+          "source_dataset": "UrbanFloodBench"
+        },
+        {
+          "class_name": "SURFACE_DRAIN_INLET",
+          "geometry_type": "GrateMeshWithInflowShaft",
+          "provenance_default": "OBSERVED",
+          "source_dataset": "UrbanFloodBench"
+        },
+        {
+          "class_name": "CSO_OUTFALL",
+          "geometry_type": "HeadwallPipeExit",
+          "provenance_default": "OBSERVED",
+          "model_id": "drainage_cso_lightgbm_v1",
+          "source_dataset": "NYSDEC_CSO"
+        },
+        {
+          "class_name": "PUMP_STATION",
+          "geometry_type": "SubsurfaceVault",
+          "provenance_default": "OBSERVED",
+          "source_dataset": "NYSDEC_CSO"
+        }
+      ]
+    }
+  }
+}

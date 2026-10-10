@@ -1,0 +1,169 @@
+{
+  "schema_version": "2.0.0",
+  "description": "Deterministic mapping from dataset raw features to 3D semantic objects, PBR materials, textures, and VFX",
+  "mappings": [
+    {
+      "dataset_source": "OpenStreetMap",
+      "feature_key": "highway=motorway",
+      "semantic_class": "ROAD_MOTORWAY",
+      "geometry_generator": "SplineExtruder",
+      "geometry_params": {
+        "width_m": 24.0,
+        "curb_height_m": 0.15,
+        "sidewalk_width_m": 2.0
+      },
+      "pbr_material": "M_Master_Road",
+      "pbr_material_instance": "MI_Road_Highway_Asphalt",
+      "texture_set": "ambientCG_Asphalt012",
+      "dynamic_state_bindings": {
+        "surface_wetness": "world_state.rainfall_intensity",
+        "flooded": "world_state.water_depth > 0.05"
+      },
+      "vfx": "Niagara_TireSpray_Emitter"
+    },
+    {
+      "dataset_source": "OpenStreetMap",
+      "feature_key": "highway=primary",
+      "semantic_class": "ROAD_PRIMARY",
+      "geometry_generator": "SplineExtruder",
+      "geometry_params": {
+        "width_m": 16.0,
+        "curb_height_m": 0.15,
+        "sidewalk_width_m": 2.0
+      },
+      "pbr_material": "M_Master_Road",
+      "pbr_material_instance": "MI_Road_Urban_Asphalt",
+      "texture_set": "ambientCG_Asphalt008",
+      "dynamic_state_bindings": {
+        "surface_wetness": "world_state.rainfall_intensity"
+      },
+      "vfx": "None"
+    },
+    {
+      "dataset_source": "MS_Building_Footprints",
+      "feature_key": "building=yes",
+      "semantic_class": "BUILDING_RESIDENTIAL",
+      "geometry_generator": "BuildingFootprintExtruder",
+      "geometry_params": {
+        "default_height_m": 9.0,
+        "parapet_height_m": 0.6,
+        "roof_type": "flat_with_parapet"
+      },
+      "pbr_material": "M_Master_Building",
+      "pbr_material_instance": "MI_Building_ConcreteFacade",
+      "texture_set": "PolyHaven_Concrete_001",
+      "dynamic_state_bindings": {
+        "surface_temp": "world_state.surface_temperature",
+        "water_line": "world_state.water_depth"
+      },
+      "vfx": "None"
+    },
+    {
+      "dataset_source": "IEEE_Building_Extraction",
+      "feature_key": "segmented_mask",
+      "semantic_class": "BUILDING_EXTRACTED",
+      "geometry_generator": "VectorizedMaskExtruder",
+      "geometry_params": {
+        "estimated_height_m": 8.0,
+        "procedural_detail": "PROCEDURAL_APPROXIMATION"
+      },
+      "pbr_material": "M_Master_Building",
+      "pbr_material_instance": "MI_Building_WeatheredBrick",
+      "texture_set": "PolyHaven_GranularConcrete",
+      "dynamic_state_bindings": {},
+      "vfx": "None"
+    },
+    {
+      "dataset_source": "EuroSAT",
+      "feature_key": "class=Forest",
+      "semantic_class": "LANDCOVER_FOREST",
+      "geometry_generator": "PCGFoliageZone",
+      "geometry_params": {
+        "density_per_100sqm": 4.5,
+        "height_variation": [
+          6.0,
+          18.0
+        ]
+      },
+      "pbr_material": "M_Master_Vegetation",
+      "pbr_material_instance": "MI_Foliage_Broadleaf",
+      "texture_set": "PolyHaven_ForestFloor",
+      "dynamic_state_bindings": {
+        "wind_sway": "world_state.wind_speed"
+      },
+      "vfx": "Niagara_FallingLeaves"
+    },
+    {
+      "dataset_source": "UrbanFloodBench",
+      "feature_key": "link_type=conduit",
+      "semantic_class": "SEWER_PIPE_CIRCULAR",
+      "geometry_generator": "UndergroundCylinderPipeExtruder",
+      "geometry_params": {
+        "radius_m": "source.diameter_m / 2.0",
+        "inlet_z": "source.inlet_elevation",
+        "outlet_z": "source.outlet_elevation"
+      },
+      "pbr_material": "M_Master_Sewer",
+      "pbr_material_instance": "MI_Sewer_ReinforcedConcrete",
+      "texture_set": "PolyHaven_ConcreteFloor",
+      "dynamic_state_bindings": {
+        "flow_fill_fraction": "simulation.sewer_fill_ratio",
+        "velocity_ms": "simulation.sewer_flow_velocity",
+        "failure_flag": "simulation.failure_detected"
+      },
+      "vfx": "Niagara_InternalFluidFlow_Pulse"
+    },
+    {
+      "dataset_source": "UrbanFloodBench",
+      "feature_key": "node_type=manhole",
+      "semantic_class": "SEWER_MANHOLE",
+      "geometry_generator": "ManholeShaftGenerator",
+      "geometry_params": {
+        "depth_m": "source.rim_elev - source.invert_elev",
+        "cover_radius_m": 0.45
+      },
+      "pbr_material": "M_Master_Metal",
+      "pbr_material_instance": "MI_CastIron_ManholeCover",
+      "texture_set": "ambientCG_Metal021",
+      "dynamic_state_bindings": {
+        "surcharge_overflow": "simulation.manhole_overflow_volume > 0"
+      },
+      "vfx": "Niagara_ManholeGeyser_Overflow"
+    },
+    {
+      "dataset_source": "UrbanFloodBench",
+      "feature_key": "cell_type=2d_water",
+      "semantic_class": "FLOOD_INUNDATION_CELL",
+      "geometry_generator": "DynamicWaterSurfaceMesh",
+      "geometry_params": {
+        "elevation_z": "world_state.terrain_elevation + world_state.water_depth"
+      },
+      "pbr_material": "M_Master_Water",
+      "pbr_material_instance": "MI_Physical_WaterSurface",
+      "texture_set": "WaterNormal_PBR",
+      "dynamic_state_bindings": {
+        "water_depth": "simulation.water_depth",
+        "flow_dir": "simulation.flow_direction",
+        "flow_speed": "simulation.flow_velocity"
+      },
+      "vfx": "Niagara_RaindropRipple_Emitter"
+    },
+    {
+      "dataset_source": "NYSDEC_CSO",
+      "feature_key": "facility_type=cso_outfall",
+      "semantic_class": "CSO_OUTFALL",
+      "geometry_generator": "OutfallHeadwallGenerator",
+      "geometry_params": {
+        "pipe_dia_m": 1.2,
+        "apron_length_m": 3.0
+      },
+      "pbr_material": "M_Master_Sewer",
+      "pbr_material_instance": "MI_Outfall_WeatheredConcrete",
+      "texture_set": "PolyHaven_GranularConcrete",
+      "dynamic_state_bindings": {
+        "overflowing": "simulation.cso_discharge_active"
+      },
+      "vfx": "Niagara_TurbulentEffluentDischarge"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+# Git & IDE
+.git
+.gitignore
+.vscode
+.idea
+*.sublime-*
+
+# Python Bytecode & Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+.venv
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Heavy Raw Datasets and Intermediate Training Checkpoints (1GB+)
+ml/datasets/
+ml/checkpoints/
+*.csv
+*.parquet
+*.h5
+*.hdf5
+
+# Unreal Engine Assets (UE5 editor only, not needed for web server)
+unreal/
+
+# Documentation and Temporary Files
+docs/
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,4 @@
+"""
+Vegetation and soil simulation.
+"""
+

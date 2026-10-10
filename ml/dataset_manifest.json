@@ -1,0 +1,1316 @@
+{
+  "scan_timestamp": "2026-10-04T01:22:36.115497",
+  "scan_directory": "C:\\Users\\Aryan kumar\\Downloads",
+  "total_datasets_found": 9,
+  "total_size_gb": 6.28,
+  "excluded_datasets": [
+    {
+      "file": "archive.zip",
+      "reason": "Medical dataset (chest X-ray), not geospatial",
+      "size_mb": 2349.25
+    }
+  ],
+  "datasets": {
+    "landslide4sense": {
+      "dataset_id": "landslide4sense",
+      "name": "Landslide4Sense",
+      "description": "Multi-sensor landslide detection (Sentinel-2, ALOS PALSAR, DEM). HDF5 images with 14 spectral/DEM bands.",
+      "category": "landslide_detection",
+      "use_for": [
+        "landslide susceptibility",
+        "terrain representation",
+        "slope features",
+        "remote sensing",
+        "DEM features"
+      ],
+      "source_file": "archive (1).zip",
+      "source_path": "C:\\Users\\Aryan kumar\\Downloads\\archive (1).zip",
+      "exists": true,
+      "file_size_bytes": 3057931607,
+      "file_size_mb": 2916.27,
+      "file_hash_sha256_partial": "4eb65b6e81e02750",
+      "last_modified": "2026-10-04T00:48:47.450649",
+      "contents": {
+        "total_files": 8643,
+        "total_size_bytes": 8968722432,
+        "total_size_mb": 8553.24,
+        "file_types": {
+          ".h5": 8643
+        },
+        "directories": [],
+        "sample_files": [
+          {
+            "name": "TestData/img/image_1.h5",
+            "size": 1837056,
+            "compressed": 572360
+          },
+          {
+            "name": "TestData/img/image_10.h5",
+            "size": 1837056,
+            "compressed": 603363
+          },
+          {
+            "name": "TestData/img/image_100.h5",
+            "size": 1837056,
+            "compressed": 556112
+          },
+          {
+            "name": "TestData/img/image_101.h5",
+            "size": 1837056,
+            "compressed": 555818
+          },
+          {
+            "name": "TestData/img/image_102.h5",
+            "size": 1837056,
+            "compressed": 557409
+          },
+          {
+            "name": "TestData/img/image_103.h5",
+            "size": 1837056,
+            "compressed": 577269
+          },
+          {
+            "name": "TestData/img/image_104.h5",
+            "size": 1837056,
+            "compressed": 530953
+          },
+          {
+            "name": "TestData/img/image_105.h5",
+            "size": 1837056,
+            "compressed": 590508
+          },
+          {
+            "name": "TestData/img/image_106.h5",
+            "size": 1837056,
+            "compressed": 582706
+          },
+          {
+            "name": "TestData/img/image_107.h5",
+            "size": 1837056,
+            "compressed": 584479
+          },
+          {
+            "name": "TestData/img/image_108.h5",
+            "size": 1837056,
+            "compressed": 570783
+          },
+          {
+            "name": "TestData/img/image_109.h5",
+            "size": 1837056,
+            "compressed": 556876
+          },
+          {
+            "name": "TestData/img/image_11.h5",
+            "size": 1837056,
+            "compressed": 594051
+          },
+          {
+            "name": "TestData/img/image_110.h5",
+            "size": 1837056,
+            "compressed": 545780
+          },
+          {
+            "name": "TestData/img/image_111.h5",
+            "size": 1837056,
+            "compressed": 542417
+          },
+          {
+            "name": "TestData/img/image_112.h5",
+            "size": 1837056,
+            "compressed": 575697
+          },
+          {
+            "name": "TestData/img/image_113.h5",
+            "size": 1837056,
+            "compressed": 601098
+          },
+          {
+            "name": "TestData/img/image_114.h5",
+            "size": 1837056,
+            "compressed": 561144
+          },
+          {
+            "name": "TestData/img/image_115.h5",
+            "size": 1837056,
+            "compressed": 563195
+          },
+          {
+            "name": "TestData/img/image_116.h5",
+            "size": 1837056,
+            "compressed": 572309
+          },
+          {
+            "name": "TestData/img/image_117.h5",
+            "size": 1837056,
+            "compressed": 635118
+          },
+          {
+            "name": "TestData/img/image_118.h5",
+            "size": 1837056,
+            "compressed": 541163
+          },
+          {
+            "name": "TestData/img/image_119.h5",
+            "size": 1837056,
+            "compressed": 534538
+          },
+          {
+            "name": "TestData/img/image_12.h5",
+            "size": 1837056,
+            "compressed": 579118
+          },
+          {
+            "name": "TestData/img/image_120.h5",
+            "size": 1837056,
+            "compressed": 536381
+          },
+          {
+            "name": "TestData/img/image_121.h5",
+            "size": 1837056,
+            "compressed": 565622
+          },
+          {
+            "name": "TestData/img/image_122.h5",
+            "size": 1837056,
+            "compressed": 531571
+          },
+          {
+            "name": "TestData/img/image_123.h5",
+            "size": 1837056,
+            "compressed": 559808
+          },
+          {
+            "name": "TestData/img/image_124.h5",
+            "size": 1837056,
+            "compressed": 569712
+          },
+          {
+            "name": "TestData/img/image_125.h5",
+            "size": 1837056,
+            "compressed": 545414
+          }
+        ],
+        "min_file_size": 18432,
+        "max_file_size": 1837056,
+        "image_count": 0,
+        "csv_count": 0,
+        "h5_count": 8643,
+        "tif_count": 0,
+        "parquet_count": 0,
+        "json_count": 0,
+        "pkl_count": 0
+      },
+      "csv_analyses": {},
+      "status": "SCANNED"
+    },
+    "eurosat": {
+      "dataset_id": "eurosat",
+      "name": "EuroSAT",
+      "description": "Satellite land-use/land-cover classification dataset. 10 classes, 27,000 images from Sentinel-2.",
+      "category": "land_cover_classification",
+      "use_for": [
+        "land-cover classification",
+        "satellite representation learning",
+        "urban/rural/vegetation/water context"
+      ],
+      "source_file": "archive (2).zip",
+      "source_path": "C:\\Users\\Aryan kumar\\Downloads\\archive (2).zip",
+      "exists": true,
+      "file_size_bytes": 2194656567,
+      "file_size_mb": 2092.99,
+      "file_hash_sha256_partial": "ca2604d58f183299",
+      "last_modified": "2026-10-04T00:51:03.842732",
+      "contents": {
+        "total_files": 54605,
+        "total_size_bytes": 3053832278,
+        "total_size_mb": 2912.36,
+        "file_types": {
+          ".jpg": 27000,
+          ".json": 2,
+          ".csv": 6,
+          ".tif": 27597
+        },
+        "directories": [],
+        "sample_files": [
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1.jpg",
+            "size": 2737,
+            "compressed": 2632
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_10.jpg",
+            "size": 2871,
+            "compressed": 2766
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_100.jpg",
+            "size": 3333,
+            "compressed": 3226
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1000.jpg",
+            "size": 3474,
+            "compressed": 3364
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1001.jpg",
+            "size": 3330,
+            "compressed": 3216
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1002.jpg",
+            "size": 2986,
+            "compressed": 2876
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1003.jpg",
+            "size": 2888,
+            "compressed": 2777
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1004.jpg",
+            "size": 3290,
+            "compressed": 3178
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1005.jpg",
+            "size": 3131,
+            "compressed": 3021
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1006.jpg",
+            "size": 2713,
+            "compressed": 2604
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1007.jpg",
+            "size": 2810,
+            "compressed": 2707
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1008.jpg",
+            "size": 3351,
+            "compressed": 3245
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1009.jpg",
+            "size": 3306,
+            "compressed": 3195
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_101.jpg",
+            "size": 3338,
+            "compressed": 3231
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1010.jpg",
+            "size": 3331,
+            "compressed": 3222
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1011.jpg",
+            "size": 3111,
+            "compressed": 3004
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1012.jpg",
+            "size": 3243,
+            "compressed": 3141
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1013.jpg",
+            "size": 3096,
+            "compressed": 2988
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1014.jpg",
+            "size": 3691,
+            "compressed": 3582
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1015.jpg",
+            "size": 3598,
+            "compressed": 3496
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1016.jpg",
+            "size": 3571,
+            "compressed": 3458
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1017.jpg",
+            "size": 3143,
+            "compressed": 3033
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1018.jpg",
+            "size": 3469,
+            "compressed": 3363
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1019.jpg",
+            "size": 3551,
+            "compressed": 3448
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_102.jpg",
+            "size": 4051,
+            "compressed": 3936
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1020.jpg",
+            "size": 3060,
+            "compressed": 2954
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1021.jpg",
+            "size": 3324,
+            "compressed": 3220
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1022.jpg",
+            "size": 3551,
+            "compressed": 3444
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1023.jpg",
+            "size": 2562,
+            "compressed": 2455
+          },
+          {
+            "name": "EuroSAT/AnnualCrop/AnnualCrop_1024.jpg",
+            "size": 3045,
+            "compressed": 2934
+          }
+        ],
+        "min_file_size": 208,
+        "max_file_size": 912497,
+        "image_count": 27000,
+        "csv_count": 6,
+        "h5_count": 0,
+        "tif_count": 27597,
+        "parquet_count": 0,
+        "json_count": 2,
+        "pkl_count": 0
+      },
+      "csv_analyses": {
+        "EuroSAT/test.csv": {
+          "columns": [
+            "",
+            "Filename",
+            "Label",
+            "ClassName"
+          ],
+          "num_columns": 4,
+          "sample_rows": 2700,
+          "header": ",Filename,Label,ClassName",
+          "sample_data": [
+            "2438,AnnualCrop/AnnualCrop_1275.jpg,0,AnnualCrop",
+            "1018,Residential/Residential_504.jpg,7,Residential",
+            "3,Pasture/Pasture_787.jpg,5,Pasture",
+            "1011,Residential/Residential_1575.jpg,7,Residential",
+            "47,Pasture/Pasture_473.jpg,5,Pasture"
+          ]
+        },
+        "EuroSAT/train.csv": {
+          "columns": [
+            "",
+            "Filename",
+            "Label",
+            "ClassName"
+          ],
+          "num_columns": 4,
+          "sample_rows": 5000,
+          "header": ",Filename,Label,ClassName",
+          "sample_data": [
+            "16257,AnnualCrop/AnnualCrop_142.jpg,0,AnnualCrop",
+            "3297,HerbaceousVegetation/HerbaceousVegetation_2835.jpg,2,HerbaceousVegetation",
+            "17881,PermanentCrop/PermanentCrop_1073.jpg,6,PermanentCrop",
+            "2223,Industrial/Industrial_453.jpg,4,Industrial",
+            "4887,HerbaceousVegetation/HerbaceousVegetation_1810.jpg,2,HerbaceousVegetation"
+          ]
+        },
+        "EuroSAT/validation.csv": {
+          "columns": [
+            "",
+            "Filename",
+            "Label",
+            "ClassName"
+          ],
+          "num_columns": 4,
+          "sample_rows": 5000,
+          "header": ",Filename,Label,ClassName",
+          "sample_data": [
+            "258,Pasture/Pasture_1481.jpg,5,Pasture",
+            "2134,Forest/Forest_2638.jpg,1,Forest",
+            "3518,Highway/Highway_875.jpg,3,Highway",
+            "3048,River/River_434.jpg,8,River",
+            "3996,SeaLake/SeaLake_2930.jpg,9,SeaLake"
+          ]
+        },
+        "EuroSATallBands/test.csv": {
+          "columns": [
+            "Filename",
+            "Label",
+            "ClassName"
+          ],
+          "num_columns": 3,
+          "sample_rows": 2759,
+          "header": "Filename,Label,ClassName",
+          "sample_data": [
+            "HerbaceousVegetation/HerbaceousVegetation_2000.tif,2,HerbaceousVegetation",
+            "HerbaceousVegetation/HerbaceousVegetation_514.tif,2,HerbaceousVegetation",
+            "Residential/Residential_597.tif,7,Residential",
+            "River/River_2122.tif,8,River",
+            "SeaLake/SeaLake_2747.tif,9,SeaLake"
+          ]
+        },
+        "EuroSATallBands/train.csv": {
+          "columns": [
+            "Filename",
+            "Label",
+            "ClassName"
+          ],
+          "num_columns": 3,
+          "sample_rows": 5000,
+          "header": "Filename,Label,ClassName",
+          "sample_data": [
+            "PermanentCrop/PermanentCrop_2401.tif,6,PermanentCrop",
+            "PermanentCrop/PermanentCrop_1006.tif,6,PermanentCrop",
+            "HerbaceousVegetation/HerbaceousVegetation_1025.tif,2,HerbaceousVegetation",
+            "SeaLake/SeaLake_1439.tif,9,SeaLake",
+            "River/River_1052.tif,8,River"
+          ]
+        }
+      },
+      "status": "SCANNED"
+    },
+    "metr_la": {
+      "dataset_id": "metr_la",
+      "name": "METR-LA Traffic",
+      "description": "Los Angeles traffic speed sensors. 207 sensors, 4 months, 5-min intervals. Graph adjacency + time series.",
+      "category": "traffic_forecasting",
+      "use_for": [
+        "traffic time-series",
+        "traffic forecasting",
+        "road-network temporal relationships",
+        "graph-based traffic"
+      ],
+      "source_file": "archive (3).zip",
+      "source_path": "C:\\Users\\Aryan kumar\\Downloads\\archive (3).zip",
+      "exists": true,
+      "file_size_bytes": 13072509,
+      "file_size_mb": 12.47,
+      "file_hash_sha256_partial": "63295188adf2ef63",
+      "last_modified": "2026-10-04T00:30:32.819184",
+      "contents": {
+        "total_files": 2,
+        "total_size_bytes": 57718515,
+        "total_size_mb": 55.04,
+        "file_types": {
+          ".h5": 1,
+          ".pkl": 1
+        },
+        "directories": [],
+        "sample_files": [
+          {
+            "name": "METR-LA.h5",
+            "size": 57038056,
+            "compressed": 13055940
+          },
+          {
+            "name": "adj_METR-LA.pkl",
+            "size": 680459,
+            "compressed": 16265
+          }
+        ],
+        "min_file_size": 680459,
+        "max_file_size": 57038056,
+        "image_count": 0,
+        "csv_count": 0,
+        "h5_count": 1,
+        "tif_count": 0,
+        "parquet_count": 0,
+        "json_count": 0,
+        "pkl_count": 1
+      },
+      "csv_analyses": {},
+      "status": "SCANNED"
+    },
+    "pems_bay": {
+      "dataset_id": "pems_bay",
+      "name": "PEMS-BAY Traffic",
+      "description": "San Francisco Bay Area traffic sensors. 325 sensors, 6 months. Complementary traffic dataset.",
+      "category": "traffic_forecasting",
+      "use_for": [
+        "traffic time-series",
+        "traffic forecasting",
+        "graph generalization testing"
+      ],
+      "source_file": "archive (4).zip",
+      "source_path": "C:\\Users\\Aryan kumar\\Downloads\\archive (4).zip",
+      "exists": true,
+      "file_size_bytes": 31304373,
+      "file_size_mb": 29.85,
+      "file_hash_sha256_partial": "3adf9402e61f401b",
+      "last_modified": "2026-10-04T00:32:13.876986",
+      "contents": {
+        "total_files": 3,
+        "total_size_bytes": 138722504,
+        "total_size_mb": 132.3,
+        "file_types": {
+          ".pkl": 1,
+          ".h5": 2
+        },
+        "directories": [],
+        "sample_files": [
+          {
+            "name": "adj_mx_bay.pkl",
+            "size": 1681480,
+            "compressed": 25477
+          },
+          {
+            "name": "pems-bay-meta.h5",
+            "size": 1110088,
+            "compressed": 20878
+          },
+          {
+            "name": "pems-bay.h5",
+            "size": 135930936,
+            "compressed": 31257566
+          }
+        ],
+        "min_file_size": 1110088,
+        "max_file_size": 135930936,
+        "image_count": 0,
+        "csv_count": 0,
+        "h5_count": 2,
+        "tif_count": 0,
+        "parquet_count": 0,
+        "json_count": 0,
+        "pkl_count": 1
+      },
+      "csv_analyses": {},
+      "status": "SCANNED"
+    },
+    "nysdec_cso": {
+      "dataset_id": "nysdec_cso",
+      "name": "NYSDEC Combined Sewer Overflows",
+      "description": "New York State combined sewer overflow events since 2013. CSV with location, duration, volume.",
+      "category": "drainage_sewer",
+      "use_for": [
+        "supplementary sewer/drainage context",
+        "overflow event patterns"
+      ],
+      "source_file": "archive (5).zip",
+      "source_path": "C:\\Users\\Aryan kumar\\Downloads\\archive (5).zip",
+      "exists": true,
+      "file_size_bytes": 428547,
+      "file_size_mb": 0.41,
+      "file_hash_sha256_partial": "a6018af036403db4",
+      "last_modified": "2026-10-04T00:30:35.626492",
+      "contents": {
+        "total_files": 4,
+        "total_size_bytes": 695928,
+        "total_size_mb": 0.66,
+        "file_types": {
+          ".pdf": 2,
+          ".csv": 1,
+          ".json": 1
+        },
+        "directories": [],
+        "sample_files": [
+          {
+            "name": "NYSDEC_CombinedSewerOverflows_CSOs_DataFileLayout.pdf",
+            "size": 198261,
+            "compressed": 187173
+          },
+          {
+            "name": "NYSDEC_CombinedSewerOverflows_CSOs_Overview.pdf",
+            "size": 208994,
+            "compressed": 198975
+          },
+          {
+            "name": "combined-sewer-overflows-csos-beginning-2013.csv",
+            "size": 261835,
+            "compressed": 34864
+          },
+          {
+            "name": "socrata_metadata.json",
+            "size": 26838,
+            "compressed": 6711
+          }
+        ],
+        "min_file_size": 26838,
+        "max_file_size": 261835,
+        "image_count": 0,
+        "csv_count": 1,
+        "h5_count": 0,
+        "tif_count": 0,
+        "parquet_count": 0,
+        "json_count": 1,
+        "pkl_count": 0
+      },
+      "csv_analyses": {
+        "combined-sewer-overflows-csos-beginning-2013.csv": {
+          "columns": [
+            "SPDES Permit Number",
+            "Outfall Number",
+            "CSO Identification Number",
+            "Facility Name",
+            "Facility Owner Name",
+            "Receiving Waterbody Name",
+            "Number of Permitted Outfalls",
+            "Discharge Activation Type",
+            "Number of Overflow Events",
+            "Timeframe of Overflow Events Information",
+            "Data as of",
+            "Link to Real-time Information",
+            "DEC Region",
+            "County",
+            "Latitude",
+            "Longtitude",
+            "Georeference",
+            "NYS Municipal Boundaries 2",
+            "New York Zip Codes 2",
+            "Counties 2"
+          ],
+          "num_columns": 20,
+          "sample_rows": 911,
+          "header": "SPDES Permit Number,Outfall Number,CSO Identification Number,Facility Name,Facility Owner Name,Receiving Waterbody Name,Number of Permitted Outfalls,Discharge Activation Type,Number of Overflow Events,Timeframe of Overflow Events Information,Data as of,Link to Real-time Information,DEC Region,County,Latitude,Longtitude,Georeference,NYS Municipal Boundaries 2,New York Zip Codes 2,Counties 2",
+          "sample_data": [
+            "NY0031429,54,NY0031429-054,Utica CSO,City of Utica,Nail Creek,47,Observation,4,May 2008 - April 2009,2015,,6,Oneida,43.085,-75.254722,\"{'type': 'Point', 'coordinates': [-75.254722, 43.085]}\",984,1464,625",
+            "NY0026191,4,NY0026191-004,NYCDEP - Hunt's Point WPCP,NYC DEP,Bronx River,33,Model,Visit facility website,\"Real-time waterbody advisory, visit website\",2015,{'url': 'http://www.nyc.gov/html/dep/html/harborwater/nyc_waterbody_advisory_program.shtml'},2,Bronx,40.83826,-73.879339,\"{'type': 'Point', 'coo",
+            "NY0028410,61,NY0028410-061,Bird Island WWTF,Buffalo Sewer Authority,Black Rock Canal,52,Model,10,Average year,2015,,9,Erie,42.920833,-78.900278,\"{'type': 'Point', 'coordinates': [-78.900278, 42.920833]}\",300,69,2041",
+            "NY0021903,7,NY0021903-007,Auburn STP,City of Auburn,Owasco Outlet,16,Observation,No Data,No Data,2015,,7,Cayuga,42.931667,-76.579167,\"{'type': 'Point', 'coordinates': [-76.579167, 42.931667]}\",87,343,618",
+            "NY0026247,34,NY0026247-034,NYCDEP - North River WPCF,NYC DEP,Hudson River,52,Model,Visit facility website,\"Real-time waterbody advisory, visit website\",2015,{'url': 'http://www.nyc.gov/html/dep/html/harborwater/nyc_waterbody_advisory_program.shtml'},2,New York,40.768585,-74.001342,\"{'type': 'Point',"
+          ]
+        }
+      },
+      "status": "SCANNED"
+    },
+    "urban_flood_bench": {
+      "dataset_id": "urban_flood_bench",
+      "name": "UrbanFloodBench",
+      "description": "1D/2D urban flood simulation network data. Nodes, edges, static/dynamic features, temporal flood propagation.",
+      "category": "flood_simulation",
+      "use_for": [
+        "flood dynamics",
+        "water levels",
+        "surface flooding",
+        "drainage interaction",
+        "flood propagation"
+      ],
+      "source_file": "urban-flood-modelling.zip",
+      "source_path": "C:\\Users\\Aryan kumar\\Downloads\\urban-flood-modelling.zip",
+      "exists": true,
+      "file_size_bytes": 153349033,
+      "file_size_mb": 146.25,
+      "file_hash_sha256_partial": "90e1f7a4f4b1da00",
+      "last_modified": "2026-10-04T00:32:34.067117",
+      "contents": {
+        "total_files": 26,
+        "total_size_bytes": 1427478128,
+        "total_size_mb": 1361.35,
+        "file_types": {
+          ".csv": 25,
+          ".parquet": 1
+        },
+        "directories": [],
+        "sample_files": [
+          {
+            "name": "1d2d_connections.csv",
+            "size": 184,
+            "compressed": 120
+          },
+          {
+            "name": "1d_edge_index.csv",
+            "size": 141,
+            "compressed": 99
+          },
+          {
+            "name": "1d_edges_dynamic_all.csv",
+            "size": 36673,
+            "compressed": 15764
+          },
+          {
+            "name": "1d_edges_static.csv",
+            "size": 1809,
+            "compressed": 715
+          },
+          {
+            "name": "1d_nodes_dynamic_all.csv",
+            "size": 34631,
+            "compressed": 10689
+          },
+          {
+            "name": "1d_nodes_static.csv",
+            "size": 950,
+            "compressed": 466
+          },
+          {
+            "name": "2d_edge_index.csv",
+            "size": 113309,
+            "compressed": 42131
+          },
+          {
+            "name": "2d_edges_dynamic_all.csv",
+            "size": 22555302,
+            "compressed": 8570838
+          },
+          {
+            "name": "2d_edges_static.csv",
+            "size": 296437,
+            "compressed": 64381
+          },
+          {
+            "name": "2d_nodes_dynamic_all.csv",
+            "size": 18300559,
+            "compressed": 6415693
+          },
+          {
+            "name": "2d_nodes_static.csv",
+            "size": 306906,
+            "compressed": 101010
+          },
+          {
+            "name": "sample_submission.csv",
+            "size": 1087393221,
+            "compressed": 110556394
+          },
+          {
+            "name": "sample_submission.parquet",
+            "size": 219017623,
+            "compressed": 14867464
+          },
+          {
+            "name": "test_1d2d_connections.csv",
+            "size": 184,
+            "compressed": 120
+          },
+          {
+            "name": "test_1d_edge_index.csv",
+            "size": 141,
+            "compressed": 99
+          },
+          {
+            "name": "test_1d_edges_dynamic_all.csv",
+            "size": 58862,
+            "compressed": 16906
+          },
+          {
+            "name": "test_1d_edges_static.csv",
+            "size": 1809,
+            "compressed": 715
+          },
+          {
+            "name": "test_1d_nodes_dynamic_all.csv",
+            "size": 63806,
+            "compressed": 17943
+          },
+          {
+            "name": "test_1d_nodes_static.csv",
+            "size": 950,
+            "compressed": 466
+          },
+          {
+            "name": "test_2d_edge_index.csv",
+            "size": 113309,
+            "compressed": 42131
+          },
+          {
+            "name": "test_2d_edges_dynamic_all.csv",
+            "size": 37951157,
+            "compressed": 8178232
+          },
+          {
+            "name": "test_2d_edges_static.csv",
+            "size": 296437,
+            "compressed": 64381
+          },
+          {
+            "name": "test_2d_nodes_dynamic_all.csv",
+            "size": 40614054,
+            "compressed": 4274696
+          },
+          {
+            "name": "test_2d_nodes_static.csv",
+            "size": 306906,
+            "compressed": 101010
+          },
+          {
+            "name": "test_timesteps.csv",
+            "size": 10593,
+            "compressed": 1975
+          },
+          {
+            "name": "timesteps.csv",
+            "size": 2175,
+            "compressed": 389
+          }
+        ],
+        "min_file_size": 141,
+        "max_file_size": 1087393221,
+        "image_count": 0,
+        "csv_count": 25,
+        "h5_count": 0,
+        "tif_count": 0,
+        "parquet_count": 1,
+        "json_count": 0,
+        "pkl_count": 0
+      },
+      "csv_analyses": {
+        "1d2d_connections.csv": {
+          "columns": [
+            "connection_idx",
+            "node_1d",
+            "node_2d"
+          ],
+          "num_columns": 3,
+          "sample_rows": 16,
+          "header": "connection_idx,node_1d,node_2d",
+          "sample_data": [
+            "0,0,503",
+            "1,13,3669",
+            "2,12,3588",
+            "3,3,3595",
+            "4,4,3600"
+          ]
+        },
+        "1d_edge_index.csv": {
+          "columns": [
+            "edge_idx",
+            "from_node",
+            "to_node"
+          ],
+          "num_columns": 3,
+          "sample_rows": 16,
+          "header": "edge_idx,from_node,to_node",
+          "sample_data": [
+            "0,0,16",
+            "1,13,12",
+            "2,3,13",
+            "3,4,3",
+            "4,14,4"
+          ]
+        },
+        "1d_edges_dynamic_all.csv": {
+          "columns": [
+            "timestep",
+            "edge_idx",
+            "flow",
+            "velocity"
+          ],
+          "num_columns": 4,
+          "sample_rows": 1504,
+          "header": "timestep,edge_idx,flow,velocity",
+          "sample_data": [
+            "0,0,33.61132,8.418276",
+            "0,1,12.366768,4.686659",
+            "0,2,-0.0068463003,-0.0055788676",
+            "0,3,-0.002185339,-0.001934937",
+            "0,4,0.0,0.0"
+          ]
+        },
+        "1d_edges_static.csv": {
+          "columns": [
+            "edge_idx",
+            "relative_position_x",
+            "relative_position_y",
+            "length",
+            "diameter",
+            "shape",
+            "roughness",
+            "slope"
+          ],
+          "num_columns": 8,
+          "sample_rows": 16,
+          "header": "edge_idx,relative_position_x,relative_position_y,length,diameter,shape,roughness,slope",
+          "sample_data": [
+            "0,-99.7489999999525,-130.07600000000093,163.91958618164062,2.5,0.0,0.019999999552965164,0.035461969673633575",
+            "1,-26.837000000057742,-36.633999999961816,45.41227340698242,2.0,0.0,0.019999999552965164,0.02344677969813347",
+            "2,-11.6919999999227,5.348999999987427,12.857475280761719,1.25,0.0,0.019999999552965164,0.014789430424571037",
+            "3,-81.10700000007637,50.411000000021886,95.49667358398438,1.25,0.0,0.019999999552965164,0.03197889029979706",
+            "4,-110.84899999992922,-158.6830000000191,193.5659942626953,1.25,0.0,0.019999999552965164,0.06188838183879852"
+          ]
+        },
+        "1d_nodes_dynamic_all.csv": {
+          "columns": [
+            "timestep",
+            "node_idx",
+            "water_level",
+            "inlet_flow"
+          ],
+          "num_columns": 4,
+          "sample_rows": 1598,
+          "header": "timestep,node_idx,water_level,inlet_flow",
+          "sample_data": [
+            "0,0,294.8743,0.0",
+            "0,1,288.22095,0.0",
+            "0,2,311.7251,3.1899052",
+            "0,3,310.67368,1.829733",
+            "0,4,311.7239,0.0"
+          ]
+        }
+      },
+      "has_parquet": true,
+      "status": "SCANNED"
+    },
+    "ieee_building_extraction": {
+      "dataset_id": "ieee_building_extraction",
+      "name": "IEEE BigData Cup Building Extraction 2024",
+      "description": "High-resolution satellite imagery for building extraction/segmentation. India-focused generalization challenge.",
+      "category": "building_extraction",
+      "use_for": [
+        "building extraction",
+        "satellite image understanding",
+        "building segmentation"
+      ],
+      "source_file": "building-extraction-generalization-2024.zip",
+      "source_path": "C:\\Users\\Aryan kumar\\Downloads\\building-extraction-generalization-2024.zip",
+      "exists": true,
+      "file_size_bytes": 1280092476,
+      "file_size_mb": 1220.79,
+      "file_hash_sha256_partial": "29484180ee85d0a5",
+      "last_modified": "2026-10-04T00:50:02.476105",
+      "contents": {
+        "total_files": 5720,
+        "total_size_bytes": 1482390603,
+        "total_size_mb": 1413.72,
+        "file_types": {
+          ".csv": 1,
+          ".tif": 1000,
+          ".jpg": 4717,
+          ".json": 2
+        },
+        "directories": [],
+        "sample_files": [
+          {
+            "name": "sample_submission.csv",
+            "size": 7277,
+            "compressed": 2199
+          },
+          {
+            "name": "test/image/0000.tif",
+            "size": 750979,
+            "compressed": 564733
+          },
+          {
+            "name": "test/image/0001.tif",
+            "size": 750979,
+            "compressed": 593244
+          },
+          {
+            "name": "test/image/0002.tif",
+            "size": 750979,
+            "compressed": 564095
+          },
+          {
+            "name": "test/image/0003.tif",
+            "size": 750979,
+            "compressed": 578823
+          },
+          {
+            "name": "test/image/0004.tif",
+            "size": 750979,
+            "compressed": 588187
+          },
+          {
+            "name": "test/image/0005.tif",
+            "size": 750979,
+            "compressed": 594202
+          },
+          {
+            "name": "test/image/0006.tif",
+            "size": 750979,
+            "compressed": 582220
+          },
+          {
+            "name": "test/image/0007.tif",
+            "size": 750979,
+            "compressed": 595571
+          },
+          {
+            "name": "test/image/0008.tif",
+            "size": 750979,
+            "compressed": 542357
+          },
+          {
+            "name": "test/image/0009.tif",
+            "size": 750979,
+            "compressed": 536975
+          },
+          {
+            "name": "test/image/0010.tif",
+            "size": 750979,
+            "compressed": 573482
+          },
+          {
+            "name": "test/image/0011.tif",
+            "size": 750979,
+            "compressed": 606314
+          },
+          {
+            "name": "test/image/0012.tif",
+            "size": 750979,
+            "compressed": 597692
+          },
+          {
+            "name": "test/image/0013.tif",
+            "size": 750979,
+            "compressed": 561707
+          },
+          {
+            "name": "test/image/0014.tif",
+            "size": 750979,
+            "compressed": 593613
+          },
+          {
+            "name": "test/image/0015.tif",
+            "size": 750979,
+            "compressed": 508399
+          },
+          {
+            "name": "test/image/0016.tif",
+            "size": 750979,
+            "compressed": 592291
+          },
+          {
+            "name": "test/image/0017.tif",
+            "size": 750979,
+            "compressed": 548561
+          },
+          {
+            "name": "test/image/0018.tif",
+            "size": 750979,
+            "compressed": 613253
+          },
+          {
+            "name": "test/image/0019.tif",
+            "size": 750979,
+            "compressed": 561071
+          },
+          {
+            "name": "test/image/0020.tif",
+            "size": 750979,
+            "compressed": 619672
+          },
+          {
+            "name": "test/image/0021.tif",
+            "size": 750979,
+            "compressed": 613887
+          },
+          {
+            "name": "test/image/0022.tif",
+            "size": 750979,
+            "compressed": 580970
+          },
+          {
+            "name": "test/image/0023.tif",
+            "size": 750979,
+            "compressed": 570245
+          },
+          {
+            "name": "test/image/0024.tif",
+            "size": 750979,
+            "compressed": 619817
+          },
+          {
+            "name": "test/image/0025.tif",
+            "size": 750979,
+            "compressed": 629742
+          },
+          {
+            "name": "test/image/0026.tif",
+            "size": 750979,
+            "compressed": 594145
+          },
+          {
+            "name": "test/image/0027.tif",
+            "size": 750979,
+            "compressed": 590993
+          },
+          {
+            "name": "test/image/0028.tif",
+            "size": 750979,
+            "compressed": 563941
+          }
+        ],
+        "min_file_size": 7277,
+        "max_file_size": 23610634,
+        "image_count": 4717,
+        "csv_count": 1,
+        "h5_count": 0,
+        "tif_count": 1000,
+        "parquet_count": 0,
+        "json_count": 2,
+        "pkl_count": 0
+      },
+      "csv_analyses": {
+        "sample_submission.csv": {
+          "columns": [
+            "ImageID",
+            "Coordinates"
+          ],
+          "num_columns": 2,
+          "sample_rows": 6,
+          "header": "ImageID,Coordinates",
+          "sample_data": [
+            "0,\"[[(142, 495), (151, 494), (152, 497), (183, 493), (184, 500), (143, 500), (142, 495)], [(284, 491), (309, 488), (311, 496), (301, 498), (301, 499), (316, 500), (285, 500), (284, 491)], [(256, 497), (276, 492), (279, 500), (242, 500), (256, 497)], [(232, 495), (228, 472), (256, 468), (309, 462), (",
+            "1,\"[[(0, 0), (1, 1), (2, 2), (3, 3)], [(241, 235), (268, 147), (279, 21), (46, 89), (61, 214)]]\"",
+            "2,\"[[(0, 0), (1, 1), (2, 2), (3, 3)], [(241, 235), (268, 147), (279, 21), (46, 89), (61, 214)], [(89, 152), (145, 153), (178, 56), (98, 112), (365, 378)], [(82, 265), (97, 252), (112, 266), (111, 267), (116, 271), (103, 282), (82, 265)]]\"",
+            "3,\"[[(0, 0), (1, 1), (2, 2), (3, 3)], [(241, 235), (268, 147), (279, 21), (46, 89), (61, 214)], [(89, 152), (145, 153), (178, 56), (98, 112), (365, 378)], [(319, 98), (322, 93), (319, 92), (325, 82), (362, 103), (365, 104), (360, 113), (357, 111), (354, 116), (331, 105)]]\"",
+            "4,\"[[(0, 0), (1, 1), (2, 2), (3, 3)]]\""
+          ]
+        }
+      },
+      "status": "SCANNED"
+    },
+    "ms_building_footprints": {
+      "dataset_id": "ms_building_footprints",
+      "name": "Microsoft Global ML Building Footprints",
+      "description": "Microsoft's worldwide ML-derived building footprints. Scripts/notebooks for accessing GeoJSON data.",
+      "category": "building_footprints",
+      "use_for": [
+        "building detection",
+        "building density",
+        "urban morphology",
+        "spatial building representation"
+      ],
+      "source_file": "GlobalMLBuildingFootprints-main.zip",
+      "source_path": "C:\\Users\\Aryan kumar\\Downloads\\GlobalMLBuildingFootprints-main.zip",
+      "exists": true,
+      "file_size_bytes": 10771686,
+      "file_size_mb": 10.27,
+      "file_hash_sha256_partial": "7f03a127f1f297f5",
+      "last_modified": "2026-10-04T00:15:42.182851",
+      "contents": {
+        "total_files": 15,
+        "total_size_bytes": 10914305,
+        "total_size_mb": 10.41,
+        "file_types": {
+          "": 2,
+          ".md": 4,
+          ".ipynb": 1,
+          ".png": 3,
+          ".jpg": 2,
+          ".ps1": 1,
+          ".py": 2
+        },
+        "directories": [
+          "GlobalMLBuildingFootprints-main/",
+          "GlobalMLBuildingFootprints-main/examples/",
+          "GlobalMLBuildingFootprints-main/images/",
+          "GlobalMLBuildingFootprints-main/scripts/"
+        ],
+        "sample_files": [
+          {
+            "name": "GlobalMLBuildingFootprints-main/.gitignore",
+            "size": 6002,
+            "compressed": 2683
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/CODE_OF_CONDUCT.md",
+            "size": 444,
+            "compressed": 175
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/LICENSE",
+            "size": 81,
+            "compressed": 76
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/README.md",
+            "size": 20819,
+            "compressed": 6403
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/SECURITY.md",
+            "size": 2780,
+            "compressed": 1301
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/SUPPORT.md",
+            "size": 1244,
+            "compressed": 687
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/examples/example_building_footprints.ipynb",
+            "size": 5343,
+            "compressed": 1731
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/images/building-height-coverage.png",
+            "size": 2496061,
+            "compressed": 2433612
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/images/country-overview.png",
+            "size": 3894304,
+            "compressed": 3853563
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/images/footprints-sample.png",
+            "size": 4414234,
+            "compressed": 4414234
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/images/polygonization.jpg",
+            "size": 32452,
+            "compressed": 23758
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/images/segmentation.jpg",
+            "size": 35051,
+            "compressed": 27565
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/scripts/make-gis-friendly.ps1",
+            "size": 1532,
+            "compressed": 626
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/scripts/make-gis-friendly.py",
+            "size": 872,
+            "compressed": 494
+          },
+          {
+            "name": "GlobalMLBuildingFootprints-main/scripts/read-files.py",
+            "size": 3086,
+            "compressed": 1020
+          }
+        ],
+        "min_file_size": 81,
+        "max_file_size": 4414234,
+        "image_count": 5,
+        "csv_count": 0,
+        "h5_count": 0,
+        "tif_count": 0,
+        "parquet_count": 0,
+        "json_count": 0,
+        "pkl_count": 0
+      },
+      "csv_analyses": {},
+      "status": "SCANNED"
+    },
+    "floods_india": {
+      "dataset_id": "floods_india",
+      "name": "Floods in India EDA + ML Model",
+      "description": "Jupyter notebook with India flood risk EDA and ML modeling. Contains embedded data references.",
+      "category": "flood_risk",
+      "use_for": [
+        "supplementary flood/environmental information",
+        "India-specific flood patterns"
+      ],
+      "source_file": "floods-in-india-eda-ml-model.ipynb",
+      "source_path": "C:\\Users\\Aryan kumar\\Downloads\\floods-in-india-eda-ml-model.ipynb",
+      "exists": true,
+      "file_size_bytes": 4309212,
+      "file_size_mb": 4.11,
+      "file_hash_sha256_partial": "be3dffc17f9cc195",
+      "last_modified": "2026-10-04T00:26:16.087589",
+      "file_type": "jupyter_notebook",
+      "status": "SCANNED"
+    }
+  }
+}

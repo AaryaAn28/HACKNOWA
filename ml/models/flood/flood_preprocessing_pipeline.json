@@ -1,0 +1,39 @@
+{
+  "feature_columns": [
+    "inlet_flow",
+    "position_x",
+    "position_y",
+    "depth",
+    "invert_elevation",
+    "surface_elevation",
+    "base_area",
+    "in_degree",
+    "out_degree",
+    "total_degree",
+    "water_level_lag_1",
+    "water_level_lag_2",
+    "water_level_lag_3",
+    "water_level_lag_5",
+    "water_level_rolling_mean_3",
+    "water_level_rolling_std_3",
+    "water_level_rolling_max_5",
+    "water_level_diff_1",
+    "water_level_diff_2",
+    "inlet_flow_lag_1",
+    "inlet_flow_lag_2",
+    "inlet_flow_lag_3",
+    "inlet_flow_rolling_mean_3"
+  ],
+  "target": "water_level",
+  "feature_count": 23,
+  "lag_features": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "rolling_windows": [
+    3,
+    5
+  ]
+}

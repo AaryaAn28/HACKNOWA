@@ -1,0 +1,28 @@
+{
+  "model_id": "landslide_resnet18_v1",
+  "dataset": "landslide4sense",
+  "architecture": "resnet18_multispectral",
+  "in_channels": 14,
+  "task": "binary_classification",
+  "training_date": "2026-10-04T22:45:43.557884",
+  "training_duration_seconds": 2278.1,
+  "best_epoch": 10,
+  "split": "spatial_block (10 blocks, 7/1/2)",
+  "metrics": {
+    "test_accuracy": 0.8657105606258149,
+    "test_f1": 0.8891280947255114,
+    "test_precision": 0.8824786324786325,
+    "test_recall": 0.89587852494577,
+    "test_auc_roc": 0.938241674109991,
+    "test_auc_pr": 0.9516959400868658
+  },
+  "uncertainty": {
+    "method": "mc_dropout",
+    "mean": 6.367478277979899e-08
+  },
+  "loss": "focal (alpha=0.75, gamma=2.0)",
+  "artifacts": {
+    "model": "C:\\Users\\Aryan kumar\\Downloads\\reality-sculptor\\ml\\models\\landslide\\landslide_resnet18_multispectral_v1.pt"
+  },
+  "seed": 42
+}

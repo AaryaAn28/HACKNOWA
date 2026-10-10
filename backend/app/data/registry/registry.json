@@ -1,0 +1,78 @@
+{
+    "flood_risk_engine": {
+        "1.0.0": {
+            "dataset_version": "houston_chennai_v1",
+            "features": [
+                "elevation",
+                "slope",
+                "curvature",
+                "flow_accumulation",
+                "distance_to_drain",
+                "drain_connectivity",
+                "drain_capacity",
+                "impervious_ratio",
+                "soil_characteristics",
+                "rainfall_intensity",
+                "rainfall_accumulation",
+                "historical_flood_frequency",
+                "water_proximity",
+                "building_density",
+                "road_density"
+            ],
+            "hyperparameters": {
+                "optimal_rounds": 550,
+                "learning_rate": 0.05,
+                "num_leaves": 31
+            },
+            "training_date": "2026-10-03T15:54:32.247085",
+            "validation_methodology": "5-fold Spatial GroupKFold (zero spatial leakage)",
+            "metrics": {
+                "spatial_cv_rmse_m": 0.06237792337198731,
+                "spatial_cv_mae_m": 0.04921567758522301,
+                "extent_iou": 0.9837528809888164
+            },
+            "calibration": {
+                "depth_error_ci_95": "\u00b1 0.08 m"
+            },
+            "geographic_coverage": "Houston TX / Chennai Urban Bayous",
+            "known_limitations": "Subsurface pipe pressurized backflow approximated via Manning intake boundary.",
+            "model_artifact_path": "C:\\Users\\Aryan kumar\\Downloads\\reality-sculptor\\backend\\app\\data\\models\\flood_lightgbm_v1.0.bin"
+        }
+    },
+    "heat_island_engine": {
+        "1.0.0": {
+            "dataset_version": "houston_chennai_v1",
+            "features": [
+                "surface_material",
+                "albedo",
+                "vegetation_index",
+                "canopy",
+                "building_density",
+                "building_height",
+                "shadow_fraction",
+                "solar_radiation",
+                "wind",
+                "humidity",
+                "time_of_day",
+                "season"
+            ],
+            "hyperparameters": {
+                "optimal_rounds": 490,
+                "learning_rate": 0.05,
+                "num_leaves": 31
+            },
+            "training_date": "2026-10-03T15:54:32.249086",
+            "validation_methodology": "5-fold Spatial GroupKFold",
+            "metrics": {
+                "temperature_mae_c": 0.560027788329442,
+                "hotspot_f1": 0.9538832548752552
+            },
+            "calibration": {
+                "temperature_error_ci_95": "\u00b1 0.85 \u00b0C"
+            },
+            "geographic_coverage": "Houston TX / Urban Microclimates",
+            "known_limitations": "Requires localized wind corridor inputs for high-rise canyon effects.",
+            "model_artifact_path": "C:\\Users\\Aryan kumar\\Downloads\\reality-sculptor\\backend\\app\\data\\models\\heat_lightgbm_v1.0.bin"
+        }
+    }
+}

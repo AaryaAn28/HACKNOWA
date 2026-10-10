@@ -1,0 +1,149 @@
+{
+  "catalog_version": "2.0.0",
+  "generated_at": "2026-10-03T18:05:00Z",
+  "regions": [
+    {
+      "region_id": "chennai_velachery",
+      "name": "Chennai Velachery & Pallikaranai Marshland",
+      "country": "India",
+      "terrain_type": "COASTAL_METROPOLITAN_WETLAND",
+      "climate_type": "TROPICAL_WET_AND_DRY_AW",
+      "bbox": [12.965, 80.200, 12.995, 80.235],
+      "elevation_range_m": [1.5, 12.0],
+      "population_density_sq_km": 16800,
+      "primary_hazard": "URBAN_WATERLOGGING_TIDAL_BACKWATER",
+      "benchmark_event": "Cyclone Michaung (Dec 2023) / Chennai Deluge (2015)",
+      "data_sources": [
+        "OpenStreetMap Geofabrik India Extract",
+        "Copernicus DEM GLO-30",
+        "India-WRIS Basin Hydrology",
+        "IMD Chennai Station Telemetry"
+      ],
+      "available_layers": [
+        "elevation", "buildings", "highways", "drainage_channels", 
+        "impervious_surface", "soil_type", "wetland_boundary"
+      ],
+      "confidence": {
+        "buildings": 0.95,
+        "roads": 0.94,
+        "elevation": 0.90,
+        "sewerage": 0.58,
+        "drain_capacity": 0.62
+      }
+    },
+    {
+      "region_id": "houston_medical_center",
+      "name": "Houston Texas Medical Center & Brays/Buffalo Bayou",
+      "country": "United States",
+      "terrain_type": "URBAN_RIVERINE_FLOODPLAIN",
+      "climate_type": "HUMID_SUBTROPICAL_CFA",
+      "bbox": [29.695, -95.415, 29.725, -95.385],
+      "elevation_range_m": [8.5, 19.0],
+      "population_density_sq_km": 8400,
+      "primary_hazard": "FLASH_FLOOD_SURCHARGE",
+      "benchmark_event": "Hurricane Harvey (Aug 2017) - 1,300 mm Rainfall",
+      "data_sources": [
+        "USGS 3DEP LiDAR 1m",
+        "Harris County Flood Control District (HCFCD) Gauges",
+        "OpenStreetMap Vector Layer",
+        "City of Houston Stormwater GIS"
+      ],
+      "available_layers": [
+        "elevation", "buildings", "highways", "bayou_channels", 
+        "hospitals", "storm_sewers", "rainfall_gauges"
+      ],
+      "confidence": {
+        "buildings": 0.98,
+        "roads": 0.98,
+        "elevation": 0.99,
+        "sewerage": 0.88,
+        "drain_capacity": 0.85
+      }
+    },
+    {
+      "region_id": "guwahati_bharalu",
+      "name": "Guwahati Central & Bharalu River Basin",
+      "country": "India",
+      "terrain_type": "HILLY_RIVERINE_VALLEY",
+      "climate_type": "SUBTROPICAL_HIGHLAND_CWA",
+      "bbox": [26.160, 91.730, 26.190, 91.770],
+      "elevation_range_m": [48.0, 165.0],
+      "population_density_sq_km": 11200,
+      "primary_hazard": "VALLEY_INUNDATION_LANDSLIDE",
+      "benchmark_event": "Assam Annual Monsoon High Tide & Flash Deluge",
+      "data_sources": [
+        "ISRO CartoDEM / Copernicus DEM GLO-30",
+        "Guwahati Municipal Corporation GIS",
+        "OpenStreetMap Vector Layer",
+        "Assam State Disaster Management Authority"
+      ],
+      "available_layers": [
+        "elevation", "slope", "buildings", "highways", 
+        "bharalu_river", "hill_contours", "drainage"
+      ],
+      "confidence": {
+        "buildings": 0.90,
+        "roads": 0.92,
+        "elevation": 0.91,
+        "sewerage": 0.45,
+        "drain_capacity": 0.48
+      }
+    },
+    {
+      "region_id": "mumbai_mithi_river",
+      "name": "Mumbai Mithi River & Kurla Floodplain",
+      "country": "India",
+      "terrain_type": "DENSE_METROPOLITAN_ESTUARINE",
+      "climate_type": "TROPICAL_MONSOON_AM",
+      "bbox": [19.050, 72.860, 19.085, 72.895],
+      "elevation_range_m": [2.0, 18.0],
+      "population_density_sq_km": 28500,
+      "primary_hazard": "HIGH_TIDE_ESTUARINE_SURGE",
+      "benchmark_event": "July 26, 2005 Extreme Deluge (944 mm / 24 hr)",
+      "data_sources": [
+        "MCGM Disaster Management Cell",
+        "Copernicus GLO-30",
+        "OpenStreetMap Vector Data"
+      ],
+      "available_layers": [
+        "elevation", "dense_buildings", "rail_corridors", 
+        "mithi_river", "stormwater_outfalls"
+      ],
+      "confidence": {
+        "buildings": 0.92,
+        "roads": 0.91,
+        "elevation": 0.88,
+        "sewerage": 0.40,
+        "drain_capacity": 0.42
+      }
+    },
+    {
+      "region_id": "amsterdam_polder",
+      "name": "Amsterdam Schiphol-Amstel Polder Complex",
+      "country": "Netherlands",
+      "terrain_type": "LOWLAND_SUBSIDED_POLDER",
+      "climate_type": "OCEANIC_CFB",
+      "bbox": [52.330, 4.850, 52.370, 4.930],
+      "elevation_range_m": [-4.5, 2.0],
+      "population_density_sq_km": 5200,
+      "primary_hazard": "DIKE_OVERTOPPING_GROUNDWATER_UPWELLING",
+      "benchmark_event": "North Sea Storm Surge Contingency",
+      "data_sources": [
+        "AHN4 High-Resolution LiDAR (0.5m)",
+        "Waternet Municipal Utility Database",
+        "Rijkswaterstaat National Hydrography"
+      ],
+      "available_layers": [
+        "sub_sea_elevation", "dikes", "polder_canals", 
+        "pump_stations", "weirs", "sluices"
+      ],
+      "confidence": {
+        "buildings": 0.99,
+        "roads": 0.99,
+        "elevation": 0.99,
+        "sewerage": 0.96,
+        "drain_capacity": 0.98
+      }
+    }
+  ]
+}

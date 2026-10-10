@@ -1,0 +1,130 @@
+{
+  "registry_version": "2.0.0",
+  "description": "Authoritative registry of PBR materials, textures, geometry templates, and VFX assets",
+  "materials": [
+    {
+      "material_id": "MAT_ROAD_ASPHALT_01",
+      "master_material": "M_Master_Road",
+      "instance_name": "MI_Road_Highway_Asphalt",
+      "category": "transportation",
+      "maps": {
+        "base_color": "T_Asphalt_01_BC",
+        "normal": "T_Asphalt_01_N",
+        "roughness": "T_Asphalt_01_R",
+        "ao": "T_Asphalt_01_AO"
+      },
+      "source": "ambientCG",
+      "license": "CC0",
+      "uv_scale": [
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "material_id": "MAT_CONCRETE_FACADE_01",
+      "master_material": "M_Master_Building",
+      "instance_name": "MI_Building_ConcreteFacade",
+      "category": "buildings",
+      "maps": {
+        "base_color": "T_Concrete_01_BC",
+        "normal": "T_Concrete_01_N",
+        "roughness": "T_Concrete_01_R",
+        "ao": "T_Concrete_01_AO"
+      },
+      "source": "PolyHaven",
+      "license": "CC0",
+      "uv_scale": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "material_id": "MAT_SEWER_PIPE_01",
+      "master_material": "M_Master_Sewer",
+      "instance_name": "MI_Sewer_ReinforcedConcrete",
+      "category": "sewer",
+      "maps": {
+        "base_color": "T_SewerConc_BC",
+        "normal": "T_SewerConc_N",
+        "roughness": "T_SewerConc_R",
+        "metallic": "T_SewerConc_M"
+      },
+      "source": "PolyHaven",
+      "license": "CC0",
+      "uv_scale": [
+        1.0,
+        4.0
+      ]
+    },
+    {
+      "material_id": "MAT_WATER_PHYSICAL_01",
+      "master_material": "M_Master_Water",
+      "instance_name": "MI_Physical_WaterSurface",
+      "category": "water",
+      "maps": {
+        "normal_a": "T_WaterWave_Normal_A",
+        "normal_b": "T_WaterWave_Normal_B",
+        "roughness_foam": "T_WaterFoam_R"
+      },
+      "source": "Unreal_Water_System",
+      "license": "Epic Content License",
+      "dynamic_params": [
+        "DepthAbsorption",
+        "WaveSpeed",
+        "RefractionIndex",
+        "Turbidity"
+      ]
+    },
+    {
+      "material_id": "MAT_CAST_IRON_01",
+      "master_material": "M_Master_Metal",
+      "instance_name": "MI_CastIron_ManholeCover",
+      "category": "infrastructure",
+      "maps": {
+        "base_color": "T_CastIron_BC",
+        "normal": "T_CastIron_N",
+        "roughness": "T_CastIron_R",
+        "metallic": "T_CastIron_M"
+      },
+      "source": "ambientCG",
+      "license": "CC0",
+      "uv_scale": [
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "vfx_emitters": [
+    {
+      "vfx_id": "VFX_RAIN_HEAVY_01",
+      "system_name": "Niagara_HeavyPrecipitation",
+      "category": "weather",
+      "max_particles": 50000,
+      "gpu_sim": true,
+      "dynamic_bindings": [
+        "world_state.rainfall_intensity"
+      ]
+    },
+    {
+      "vfx_id": "VFX_SEWER_INTERNAL_FLOW_01",
+      "system_name": "Niagara_InternalFluidFlow_Pulse",
+      "category": "sewer",
+      "max_particles": 8000,
+      "gpu_sim": true,
+      "dynamic_bindings": [
+        "simulation.sewer_flow_velocity",
+        "simulation.sewer_fill_ratio"
+      ]
+    },
+    {
+      "vfx_id": "VFX_MANHOLE_OVERFLOW_01",
+      "system_name": "Niagara_ManholeGeyser_Overflow",
+      "category": "drainage",
+      "max_particles": 12000,
+      "gpu_sim": true,
+      "dynamic_bindings": [
+        "simulation.overflow_rate"
+      ]
+    }
+  ]
+}

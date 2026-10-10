@@ -1,0 +1,4 @@
+"""
+Georeferencing and spatial alignment.
+"""
+

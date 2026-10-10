@@ -1,0 +1,512 @@
+[
+  {
+    "source_id": "TG_SRC_001",
+    "label": "Epic \u2014 Designing Visuals, Rendering and Graphics",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/designing-visuals-rendering-and-graphics-with-unreal-engine",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Documentation",
+    "category": "rendering_spec",
+    "intended_usage": "Unreal Engine 5.6+ Nanite, Lumen, Substrate, and TSR rendering specifications",
+    "context_snippet": "Epic's current rendering documentation covers Lumen, Nanite, Virtual Shadow Maps, Substrate, Path Tracer and related rendering systems: | - [Epic \u2014 Designing Visuals, Rendering and Graphics](https://dev.epicgames.com/documentation/en-us/unreal-engine"
+  },
+  {
+    "source_id": "TG_SRC_002",
+    "label": "Epic \u2014 Substrate Materials",
+    "url": "https://dev.epicgames.com/documentation/unreal-engine/substrate-materials-in-unreal-engine",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Documentation",
+    "category": "rendering_spec",
+    "intended_usage": "Unreal Engine 5.6+ Nanite, Lumen, Substrate, and TSR rendering specifications",
+    "context_snippet": "Epic's current rendering documentation covers Lumen, Nanite, Virtual Shadow Maps, Substrate, Path Tracer and related rendering systems: | - [Epic \u2014 Designing Visuals, Rendering and Graphics](https://dev.epicgames.com/documentation/en-us/unreal-engine"
+  },
+  {
+    "source_id": "TG_SRC_003",
+    "label": "Epic \u2014 Substrate Overview",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/overview-of-substrate-materials",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Documentation",
+    "category": "rendering_spec",
+    "intended_usage": "Unreal Engine 5.6+ Nanite, Lumen, Substrate, and TSR rendering specifications",
+    "context_snippet": "- [Epic \u2014 Designing Visuals, Rendering and Graphics](https://dev.epicgames.com/documentation/en-us/unreal-engine/designing-visuals-rendering-and-graphics-with-unreal-engine) | - [Epic \u2014 Substrate Materials](https://dev.epicgames.com/documentation/unr"
+  },
+  {
+    "source_id": "TG_SRC_004",
+    "label": "Epic \u2014 Hardware and Software Specifications",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/hardware-and-software-specifications-for-unreal-engine",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Documentation",
+    "category": "rendering_spec",
+    "intended_usage": "Unreal Engine 5.6+ Nanite, Lumen, Substrate, and TSR rendering specifications",
+    "context_snippet": "- [Epic \u2014 Designing Visuals, Rendering and Graphics](https://dev.epicgames.com/documentation/en-us/unreal-engine/designing-visuals-rendering-and-graphics-with-unreal-engine) | - [Epic \u2014 Substrate Materials](https://dev.epicgames.com/documentation/unr"
+  },
+  {
+    "source_id": "TG_SRC_005",
+    "label": "Poly Haven",
+    "url": "https://polyhaven.com/",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Main library: | - [Poly Haven](https://polyhaven.com/) | - [Poly Haven HDRI Library](https://polyhaven.com/hdris) | - [Poly Haven Textures](https://polyhaven.com/textures) | - [Poly Haven Models](https://polyhaven.com/models)"
+  },
+  {
+    "source_id": "TG_SRC_006",
+    "label": "Poly Haven HDRI Library",
+    "url": "https://polyhaven.com/hdris",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "hdri_lighting",
+    "intended_usage": "PBR environment lighting & sky dome reflections",
+    "context_snippet": "Main library: | - [Poly Haven](https://polyhaven.com/) | - [Poly Haven HDRI Library](https://polyhaven.com/hdris) | - [Poly Haven Textures](https://polyhaven.com/textures) | - [Poly Haven Models](https://polyhaven.com/models) | - [Poly Haven License]"
+  },
+  {
+    "source_id": "TG_SRC_007",
+    "label": "Poly Haven Textures",
+    "url": "https://polyhaven.com/textures",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "pbr_texture",
+    "intended_usage": "PBR surface material (diffuse, normal, roughness, displacement)",
+    "context_snippet": "- [Poly Haven](https://polyhaven.com/) | - [Poly Haven HDRI Library](https://polyhaven.com/hdris) | - [Poly Haven Textures](https://polyhaven.com/textures) | - [Poly Haven Models](https://polyhaven.com/models) | - [Poly Haven License](https://polyhav"
+  },
+  {
+    "source_id": "TG_SRC_008",
+    "label": "Poly Haven Models",
+    "url": "https://polyhaven.com/models",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "- [Poly Haven](https://polyhaven.com/) | - [Poly Haven HDRI Library](https://polyhaven.com/hdris) | - [Poly Haven Textures](https://polyhaven.com/textures) | - [Poly Haven Models](https://polyhaven.com/models) | - [Poly Haven License](https://polyhav"
+  },
+  {
+    "source_id": "TG_SRC_009",
+    "label": "Poly Haven License",
+    "url": "https://polyhaven.com/license",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "- [Poly Haven HDRI Library](https://polyhaven.com/hdris) | - [Poly Haven Textures](https://polyhaven.com/textures) | - [Poly Haven Models](https://polyhaven.com/models) | - [Poly Haven License](https://polyhaven.com/license) | ### Recommended HDRIs"
+  },
+  {
+    "source_id": "TG_SRC_010",
+    "label": "Download / asset page \u2014 Studio Small 04",
+    "url": "https://polyhaven.com/a/studio_small_04",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "hdri_lighting",
+    "intended_usage": "PBR environment lighting & sky dome reflections",
+    "context_snippet": "#### A. Studio Small 04 | High-contrast indoor studio with strong rim lighting and a neutral cyclorama. | - [Download / asset page \u2014 Studio Small 04](https://polyhaven.com/a/studio_small_04) | **Recommended use:** HERO anatomical shots, rim-light sep"
+  },
+  {
+    "source_id": "TG_SRC_011",
+    "label": "Download / asset page \u2014 Story Studio 05",
+    "url": "https://polyhaven.com/a/story_studio_05",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "hdri_lighting",
+    "intended_usage": "PBR environment lighting & sky dome reflections",
+    "context_snippet": "#### B. Story Studio 05 | High-contrast white infinity studio with overhead softbox/umbrella lighting. | - [Download / asset page \u2014 Story Studio 05](https://polyhaven.com/a/story_studio_05) | **Recommended use:** clean medical/scientific hero present"
+  },
+  {
+    "source_id": "TG_SRC_012",
+    "label": "Download / asset page \u2014 Story Studio 04",
+    "url": "https://polyhaven.com/a/story_studio_04",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "hdri_lighting",
+    "intended_usage": "PBR environment lighting & sky dome reflections",
+    "context_snippet": "#### C. Story Studio 04 | Soft studio lighting with white infinity cove. | - [Download / asset page \u2014 Story Studio 04](https://polyhaven.com/a/story_studio_04) | **Recommended use:** softer anatomical material lookdev."
+  },
+  {
+    "source_id": "TG_SRC_013",
+    "label": "Download / asset page \u2014 Studio Small 01",
+    "url": "https://polyhaven.com/a/studio_small_01",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "hdri_lighting",
+    "intended_usage": "PBR environment lighting & sky dome reflections",
+    "context_snippet": "#### D. Studio Small 01 | High-contrast studio with bright lamps and mixed warm/cool tones. | - [Download / asset page \u2014 Studio Small 01](https://polyhaven.com/a/studio_small_01) | **Recommended use:** dramatic cinematic secondary presentation."
+  },
+  {
+    "source_id": "TG_SRC_014",
+    "label": "Download / asset page \u2014 Blocky Photo Studio",
+    "url": "https://polyhaven.com/a/blocky_photo_studio",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "hdri_lighting",
+    "intended_usage": "PBR environment lighting & sky dome reflections",
+    "context_snippet": "#### E. Blocky Photo Studio | Modern concrete studio with soft window light and cool studio lamps. | - [Download / asset page \u2014 Blocky Photo Studio](https://polyhaven.com/a/blocky_photo_studio) | **Recommended use:** dark premium graphite environment"
+  },
+  {
+    "source_id": "TG_SRC_015",
+    "label": "Download / asset page \u2014 Ferndale Studio 04",
+    "url": "https://polyhaven.com/a/ferndale_studio_04",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "hdri_lighting",
+    "intended_usage": "PBR environment lighting & sky dome reflections",
+    "context_snippet": "#### F. Ferndale Studio 04 | Studio lighting with warm key and teal/green accents. | - [Download / asset page \u2014 Ferndale Studio 04](https://polyhaven.com/a/ferndale_studio_04) | **Recommended use:** optional cinematic showcase mode. Do NOT use excess"
+  },
+  {
+    "source_id": "TG_SRC_016",
+    "label": "Concrete \u2014 Poly Haven",
+    "url": "https://polyhaven.com/a/concrete",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "pbr_texture",
+    "intended_usage": "PBR surface material (diffuse, normal, roughness, displacement)",
+    "context_snippet": "High-detail 8K concrete with diffuse, normal, roughness, displacement and related maps. | - [Concrete \u2014 Poly Haven](https://polyhaven.com/a/concrete) | **Use for:** studio floor/walls/platform."
+  },
+  {
+    "source_id": "TG_SRC_017",
+    "label": "Concrete Floor \u2014 Poly Haven",
+    "url": "https://polyhaven.com/a/concrete_floor",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "pbr_texture",
+    "intended_usage": "PBR surface material (diffuse, normal, roughness, displacement)",
+    "context_snippet": "## 3.2 Poly Haven \u2014 Concrete Floor | - [Concrete Floor \u2014 Poly Haven](https://polyhaven.com/a/concrete_floor) | **Use for:** premium presentation platform."
+  },
+  {
+    "source_id": "TG_SRC_018",
+    "label": "Granular Concrete \u2014 Poly Haven",
+    "url": "https://polyhaven.com/a/granular_concrete",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "pbr_texture",
+    "intended_usage": "PBR surface material (diffuse, normal, roughness, displacement)",
+    "context_snippet": "## 3.3 Poly Haven \u2014 Granular Concrete | - [Granular Concrete \u2014 Poly Haven](https://polyhaven.com/a/granular_concrete) | **Use for:** subtle graphite/concrete environment variation."
+  },
+  {
+    "source_id": "TG_SRC_019",
+    "label": "Square Floor \u2014 Poly Haven",
+    "url": "https://polyhaven.com/a/square_floor",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "pbr_texture",
+    "intended_usage": "PBR surface material (diffuse, normal, roughness, displacement)",
+    "context_snippet": "## 3.4 Poly Haven \u2014 Square Floor | - [Square Floor \u2014 Poly Haven](https://polyhaven.com/a/square_floor) | **Use for:** dark tiled scientific studio floor."
+  },
+  {
+    "source_id": "TG_SRC_020",
+    "label": "Tiled Floor 001 \u2014 Poly Haven",
+    "url": "https://polyhaven.com/a/tiled_floor_001",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "pbr_texture",
+    "intended_usage": "PBR surface material (diffuse, normal, roughness, displacement)",
+    "context_snippet": "## 3.5 Poly Haven \u2014 Tiled Floor 001 | - [Tiled Floor 001 \u2014 Poly Haven](https://polyhaven.com/a/tiled_floor_001) | **Use for:** alternate studio floor material."
+  },
+  {
+    "source_id": "TG_SRC_021",
+    "label": "ambientCG",
+    "url": "https://ambientcg.com/",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "pbr_materials",
+    "intended_usage": "PBR ground, concrete, asphalt, metal, and structural materials",
+    "context_snippet": "ambientCG provides free PBR materials, HDRIs and models under CC0. | - [ambientCG](https://ambientcg.com/) | - [ambientCG Materials](https://ambientcg.com/list) | - [ambientCG License](https://ambientcg.com/license)"
+  },
+  {
+    "source_id": "TG_SRC_022",
+    "label": "ambientCG Materials",
+    "url": "https://ambientcg.com/list",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "pbr_materials",
+    "intended_usage": "PBR ground, concrete, asphalt, metal, and structural materials",
+    "context_snippet": "ambientCG provides free PBR materials, HDRIs and models under CC0. | - [ambientCG](https://ambientcg.com/) | - [ambientCG Materials](https://ambientcg.com/list) | - [ambientCG License](https://ambientcg.com/license) | Recommended use:"
+  },
+  {
+    "source_id": "TG_SRC_023",
+    "label": "ambientCG License",
+    "url": "https://ambientcg.com/license",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "CC0 Public Domain",
+    "category": "pbr_materials",
+    "intended_usage": "PBR ground, concrete, asphalt, metal, and structural materials",
+    "context_snippet": "- [ambientCG](https://ambientcg.com/) | - [ambientCG Materials](https://ambientcg.com/list) | - [ambientCG License](https://ambientcg.com/license) | Recommended use:"
+  },
+  {
+    "source_id": "TG_SRC_024",
+    "label": "Electric Dreams Env \u2014 Fab",
+    "url": "https://www.fab.com/listings/d79688f5-29be-4fb2-a650-2d4a813f5306",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Content License / Fab Standard",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "- photorealistic environment construction | - high-detail assets | - [Electric Dreams Env \u2014 Fab](https://www.fab.com/listings/d79688f5-29be-4fb2-a650-2d4a813f5306) | ### Important"
+  },
+  {
+    "source_id": "TG_SRC_025",
+    "label": "Content Examples \u2014 Fab",
+    "url": "https://www.fab.com/listings/4d251261-d98c-48e2-baee-8f4e47c67091",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Content License / Fab Standard",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "- rendering | - Blueprints | - [Content Examples \u2014 Fab](https://www.fab.com/listings/4d251261-d98c-48e2-baee-8f4e47c67091) | This is especially useful for building:"
+  },
+  {
+    "source_id": "TG_SRC_026",
+    "label": "Valley of the Ancient \u2014 Fab",
+    "url": "https://www.fab.com/listings/0c19880e-21bd-42ba-8287-1caccc3951b1",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Content License / Fab Standard",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "- photorealistic environment construction | - high-detail Megascans assets | - [Valley of the Ancient \u2014 Fab](https://www.fab.com/listings/0c19880e-21bd-42ba-8287-1caccc3951b1) | ### WARNING"
+  },
+  {
+    "source_id": "TG_SRC_027",
+    "label": "Ultra Dynamic Sky \u2014 Fab",
+    "url": "https://www.fab.com/listings/84fda27a-c79f-49c9-8458-82401fb37cfb",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Content License / Fab Standard",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Dynamic sky/weather system with integrated lighting. | - [Ultra Dynamic Sky \u2014 Fab](https://www.fab.com/listings/84fda27a-c79f-49c9-8458-82401fb37cfb) | ### TECHGIUM recommendation"
+  },
+  {
+    "source_id": "TG_SRC_028",
+    "label": "Easy Fog \u2014 Fab",
+    "url": "https://www.fab.com/listings/0a1c0c21-ff23-4fb7-9dc5-7beb6e16ce64",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Content License / Fab Standard",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Fog/atmosphere system designed for Unreal Engine 5. | - [Easy Fog \u2014 Fab](https://www.fab.com/listings/0a1c0c21-ff23-4fb7-9dc5-7beb6e16ce64) | The listing states support for Lumen and Path Tracing and provides controllable fog/cloud material parameter"
+  },
+  {
+    "source_id": "TG_SRC_029",
+    "label": "PBL Database \u2014 Fab",
+    "url": "https://www.fab.com/listings/fb781de3-8366-43d1-8e2c-dde61fc6ec9f",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Content License / Fab Standard",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Physically based lighting reference/data tool. | - [PBL Database \u2014 Fab](https://www.fab.com/listings/fb781de3-8366-43d1-8e2c-dde61fc6ec9f) | Useful for learning/setting physically plausible light values."
+  },
+  {
+    "source_id": "TG_SRC_030",
+    "label": "Cinematic Realistic Lighting Pack \u2014 Fab",
+    "url": "https://www.fab.com/listings/cd383d6a-0950-4459-9e03-d6403c21a5ec",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Content License / Fab Standard",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "A Fab lighting package providing preconfigured cinematic lighting scenarios. | - [Cinematic Realistic Lighting Pack \u2014 Fab](https://www.fab.com/listings/cd383d6a-0950-4459-9e03-d6403c21a5ec) | ### TECHGIUM recommendation"
+  },
+  {
+    "source_id": "TG_SRC_031",
+    "label": "Epic \u2014 Quixel Bridge Plugin",
+    "url": "https://dev.epicgames.com/documentation/unreal-engine/quixel-bridge-plugin-for-unreal-engine",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Documentation",
+    "category": "rendering_spec",
+    "intended_usage": "Unreal Engine 5.6+ Nanite, Lumen, Substrate, and TSR rendering specifications",
+    "context_snippet": "Epic's documentation states that the Megascans content previously accessed through Quixel Bridge is now available through Fab and the Fab window inside Unreal Engine. | - [Epic \u2014 Quixel Bridge Plugin](https://dev.epicgames.com/documentation/unreal-en"
+  },
+  {
+    "source_id": "TG_SRC_032",
+    "label": "Epic \u2014 Fab Window in Unreal Engine",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/fab-window-in-unreal-engine",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Documentation",
+    "category": "rendering_spec",
+    "intended_usage": "Unreal Engine 5.6+ Nanite, Lumen, Substrate, and TSR rendering specifications",
+    "context_snippet": "Epic's documentation states that the Megascans content previously accessed through Quixel Bridge is now available through Fab and the Fab window inside Unreal Engine. | - [Epic \u2014 Quixel Bridge Plugin](https://dev.epicgames.com/documentation/unreal-en"
+  },
+  {
+    "source_id": "TG_SRC_033",
+    "label": "Epic \u2014 Free Epic Games Content",
+    "url": "https://dev.epicgames.com/documentation/unreal-engine/free-epic-games-content",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Documentation",
+    "category": "rendering_spec",
+    "intended_usage": "Unreal Engine 5.6+ Nanite, Lumen, Substrate, and TSR rendering specifications",
+    "context_snippet": "- [Epic \u2014 Quixel Bridge Plugin](https://dev.epicgames.com/documentation/unreal-engine/quixel-bridge-plugin-for-unreal-engine) | - [Epic \u2014 Fab Window in Unreal Engine](https://dev.epicgames.com/documentation/en-us/unreal-engine/fab-window-in-unreal-en"
+  },
+  {
+    "source_id": "TG_SRC_034",
+    "label": "Realistic Human Internal Organs Pack \u2014 Fab",
+    "url": "https://www.fab.com/listings/b9d36ef6-d8a6-4da8-9c12-2166641f3c5c",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Content License / Fab Standard",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "## 8.1 Realistic Human Internal Organs Pack | - [Realistic Human Internal Organs Pack \u2014 Fab](https://www.fab.com/listings/b9d36ef6-d8a6-4da8-9c12-2166641f3c5c) | The listing describes high-resolution organ models, 4K PBR textures and Unreal-compatibl"
+  },
+  {
+    "source_id": "TG_SRC_035",
+    "label": "ANATOMY 3D ATLAS \u2014 Fab",
+    "url": "https://www.fab.com/listings/f3e29afd-4f18-4f80-b946-1c75daa3df97",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Content License / Fab Standard",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "## 8.2 Anatomy 3D Atlas | - [ANATOMY 3D ATLAS \u2014 Fab](https://www.fab.com/listings/f3e29afd-4f18-4f80-b946-1c75daa3df97) | Useful as a reference for:"
+  },
+  {
+    "source_id": "TG_SRC_036",
+    "label": "Epic Free Content",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/free-epic-games-content",
+    "source_file": "TECHGIUM_2026_AAA_UE5_ASSET_AND_TEXTURE_RESOURCE_PACK.md",
+    "license": "Epic Documentation",
+    "category": "rendering_spec",
+    "intended_usage": "Unreal Engine 5.6+ Nanite, Lumen, Substrate, and TSR rendering specifications",
+    "context_snippet": "- [Poly Haven Textures](https://polyhaven.com/textures) | - [Poly Haven Models](https://polyhaven.com/models) | - [ambientCG](https://ambientcg.com/) | - [Epic Free Content](https://dev.epicgames.com/documentation/en-us/unreal-engine/free-epic-games-"
+  },
+  {
+    "source_id": "TG_SRC_037",
+    "label": "SAT-DS",
+    "url": "https://github.com/zhaoziheng/SAT-DS",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Use the official SAT-DS repository as the first dataset-discovery catalogue: | https://github.com/zhaoziheng/SAT-DS | SAT-DS currently catalogs 72 public 3D segmentation datasets spanning CT, MRI and PET, with 497 classes and eight body regions."
+  },
+  {
+    "source_id": "TG_SRC_038",
+    "label": "https://zenodo.org/records/8367170",
+    "url": "https://zenodo.org/records/8367170",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Official Zenodo: | [https://zenodo.org/records/8367170](https://zenodo.org/records/8367170) | Approximately 3.3 GB."
+  },
+  {
+    "source_id": "TG_SRC_039",
+    "label": "https://www.cancerimagingarchive.net/collection/ct-org/",
+    "url": "https://www.cancerimagingarchive.net/collection/ct-org/",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Official TCIA: | [https://www.cancerimagingarchive.net/collection/ct-org/](https://www.cancerimagingarchive.net/collection/ct-org/) | Approximately 16.9 GB."
+  },
+  {
+    "source_id": "TG_SRC_040",
+    "label": "https://zenodo.org/records/3367758",
+    "url": "https://zenodo.org/records/3367758",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Official Zenodo: | [https://zenodo.org/records/3367758](https://zenodo.org/records/3367758) | Approximately 2 GB for the current listed train/test archives."
+  },
+  {
+    "source_id": "TG_SRC_041",
+    "label": "MedSAM-practice",
+    "url": "https://github.com/AnnChou/MedSAM-practice",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Official repository: | https://github.com/AnnChou/MedSAM-practice | Inspect the dataset before downloading."
+  },
+  {
+    "source_id": "TG_SRC_042",
+    "label": "AbdomenCT-1K",
+    "url": "https://github.com/JunMa11/AbdomenCT-1K",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Official repository: | https://github.com/JunMa11/AbdomenCT-1K | Reported in SAT-DS as:"
+  },
+  {
+    "source_id": "TG_SRC_043",
+    "label": "https://zenodo.org/records/7262581",
+    "url": "https://zenodo.org/records/7262581",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Official Zenodo: | [https://zenodo.org/records/7262581](https://zenodo.org/records/7262581) | SAT-DS lists:"
+  },
+  {
+    "source_id": "TG_SRC_044",
+    "label": "https://humanheart-project.creatis.insa-lyon.fr/database/",
+    "url": "https://humanheart-project.creatis.insa-lyon.fr/database/",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Official: | [https://humanheart-project.creatis.insa-lyon.fr/database/](https://humanheart-project.creatis.insa-lyon.fr/database/) | SAT-DS lists:"
+  },
+  {
+    "source_id": "TG_SRC_045",
+    "label": "http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html",
+    "url": "http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "### ATLASR2 | [http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html](http://fcon_1000.projects.nitrc.org/indi/retro/atlas.html) | Destination:"
+  },
+  {
+    "source_id": "TG_SRC_046",
+    "label": "https://brainptm-2021.grand-challenge.org/",
+    "url": "https://brainptm-2021.grand-challenge.org/",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "### BrainPTM | [https://brainptm-2021.grand-challenge.org/](https://brainptm-2021.grand-challenge.org/) | Destination:"
+  },
+  {
+    "source_id": "TG_SRC_047",
+    "label": "http://brain-development.org/",
+    "url": "http://brain-development.org/",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "### Brain Development Atlas | [http://brain-development.org/](http://brain-development.org/) | Destination:"
+  },
+  {
+    "source_id": "TG_SRC_048",
+    "label": "https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=93258287",
+    "url": "https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=93258287",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Official source listed by SAT-DS: | [https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=93258287](https://wiki.cancerimagingarchive.net/pages/viewpage.action?pageId=93258287) | SAT-DS lists:"
+  },
+  {
+    "source_id": "TG_SRC_049",
+    "label": "https://www.kaggle.com/competitions/ultrasound-image-segmentation-and-text-extraction/data",
+    "url": "https://www.kaggle.com/competitions/ultrasound-image-segmentation-and-text-extraction/data",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Ultrasound Image Segmentation and Text Extraction: | [https://www.kaggle.com/competitions/ultrasound-image-segmentation-and-text-extraction/data](https://www.kaggle.com/competitions/ultrasound-image-segmentation-and-text-extraction/data) | Destinatio"
+  },
+  {
+    "source_id": "TG_SRC_050",
+    "label": "https://www.kaggle.com/c/ultrasound-nerve-segmentation/data",
+    "url": "https://www.kaggle.com/c/ultrasound-nerve-segmentation/data",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Ultrasound Nerve Segmentation: | [https://www.kaggle.com/c/ultrasound-nerve-segmentation/data](https://www.kaggle.com/c/ultrasound-nerve-segmentation/data) | Destination:"
+  },
+  {
+    "source_id": "TG_SRC_051",
+    "label": "https://zenodo.org/records/22688904",
+    "url": "https://zenodo.org/records/22688904",
+    "source_file": "TECHGIUM_2026_MASTER_MEDICAL_DATASET_ACQUISITION_PROMPT_UE5_READY.md",
+    "license": "UNKNOWN",
+    "category": "general",
+    "intended_usage": "Reference and rendering documentation",
+    "context_snippet": "Official current version: | [https://zenodo.org/records/22688904](https://zenodo.org/records/22688904) | Current record:"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "feature_columns": [
+    "elevation",
+    "slope",
+    "aspect",
+    "curvature",
+    "roughness",
+    "elev_mean_3x3",
+    "elev_std_3x3",
+    "elev_range_3x3",
+    "relative_elevation"
+  ],
+  "target": "target_twi",
+  "cell_size": 30.0,
+  "dataset": "landslide4sense_alos_dem",
+  "description": "Predicts Topographic Wetness Index (TWI) & hydrological pooling from terrain morphometrics"
+}

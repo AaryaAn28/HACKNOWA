@@ -1,0 +1,84 @@
+{
+  "registry_version": "2.0.0",
+  "updated_at": "2026-10-03T18:07:10Z",
+  "models": {
+    "flood_model": {
+      "name": "flood_lightgbm_v2.0",
+      "algorithm": "LightGBM Regressor (Gradient Boosting)",
+      "target": "flood_depth_m",
+      "training_budget": "Up to 150 rounds with early stopping",
+      "stopped_iteration": 150,
+      "spatial_cv_rmse_m": 0.05392716379271582,
+      "region_holdout_rmse_m": 0.4574820923732264,
+      "region_holdout_mae_m": 0.355781782005163,
+      "flood_extent_iou": 0.18115656963021243,
+      "features": [
+        "elevation",
+        "slope",
+        "curvature",
+        "flow_accumulation",
+        "distance_to_drain",
+        "drain_connectivity",
+        "drain_capacity",
+        "impervious_ratio",
+        "soil_permeability",
+        "rainfall_intensity",
+        "rainfall_accumulation",
+        "historical_flood_frequency",
+        "water_proximity",
+        "building_density",
+        "road_density"
+      ],
+      "feature_importance_gain": {
+        "elevation": 1315.1240345565602,
+        "slope": 368.850684360601,
+        "curvature": 136.65180143062025,
+        "flow_accumulation": 13.930789767764509,
+        "distance_to_drain": 47.84520856104791,
+        "drain_connectivity": 125.49399991612881,
+        "drain_capacity": 2979.1883599432185,
+        "impervious_ratio": 381.97543933521956,
+        "soil_permeability": 125.86381712649018,
+        "rainfall_intensity": 456.64289173297584,
+        "rainfall_accumulation": 23579.607260362245,
+        "historical_flood_frequency": 342.62330286949873,
+        "water_proximity": 420.85044206120074,
+        "building_density": 22.272215900942683,
+        "road_density": 0.2816654033958912
+      }
+    },
+    "heat_model": {
+      "name": "heat_lightgbm_v2.0",
+      "algorithm": "LightGBM Regressor",
+      "target": "surface_temperature_c",
+      "stopped_iteration": 150,
+      "spatial_cv_mae_c": 0.35419892043327544,
+      "features": [
+        "surface_material",
+        "albedo",
+        "vegetation_index",
+        "canopy",
+        "building_density",
+        "building_height",
+        "shadow_fraction",
+        "solar_radiation",
+        "wind_speed",
+        "humidity",
+        "time_of_day"
+      ],
+      "feature_importance_gain": {
+        "surface_material": 17.212286978960037,
+        "albedo": 23839.381996303797,
+        "vegetation_index": 134403.19158378243,
+        "canopy": 156808.69306237996,
+        "building_density": 78972.19248265028,
+        "building_height": 69.0426187440753,
+        "shadow_fraction": 194325.06234297156,
+        "solar_radiation": 398968.8869161606,
+        "wind_speed": 209494.65439784527,
+        "humidity": 5550.970112860203,
+        "time_of_day": 54.363972932100296
+      }
+    }
+  }
+}

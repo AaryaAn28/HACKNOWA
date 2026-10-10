@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reality Sculptor — Physical World Programming OS</title>
+    <!-- Fonts: Inter, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Three.js & OrbitControls for real 3D WebGL viewport -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        
+        <!-- ============================================================
+             SIDEBAR (Expendo Live UI Architecture)
+             ============================================================ -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar Brand -->
+            <div class="sidebar-brand" onclick="switchTab('world')">
+                <div class="logo-icon-wrap">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2" fill="rgba(255, 255, 255, 0.2)" stroke="#ffffff"/>
+                        <polyline points="2 17 12 22 22 17" stroke="#34d399"/>
+                        <polyline points="2 12 12 17 22 12" stroke="#c084fc"/>
+                    </svg>
+                </div>
+                <div class="logo-info">
+                    <span class="logo-text">REALITY SCULPTOR</span>
+                    <span class="logo-sub">PHYSICAL WORLD OS</span>
+                </div>
+            </div>
+
+            <!-- Quick Action Button -->
+            <div class="sidebar-action-wrap">
+                <button class="btn-sidebar-create" onclick="executeGovernorSearch()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                    <span>Deploy Action</span>
+                    <kbd>Space</kbd>
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="sidebar-section-title">Navigation</div>
+            <nav class="sidebar-menu">
+                <button class="menu-item active" data-tab="world" onclick="switchTab('world')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span>3D Digital Twin</span>
+                </button>
+                <button class="menu-item" data-tab="disaster-lab" onclick="switchTab('disaster-lab')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    <span>Disaster Lab</span>
+                    <span class="menu-badge warn" id="sidebar-hazard-badge">4 Hazards</span>
+                </button>
+                <button class="menu-item" data-tab="reality-scan" onclick="switchTab('reality-scan')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>
+                    <span>Reality Perception</span>
+                    <span class="menu-badge" id="sidebar-crit-count">2 Critical</span>
+                </button>
+                <button class="menu-item" data-tab="causal-brain" onclick="switchTab('causal-brain')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"/></svg>
+                    <span>Causal Brain & X-Ray</span>
+                </button>
+                <button class="menu-item" data-tab="interventions" onclick="switchTab('interventions')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    <span>Intervention Plans</span>
+                    <span class="menu-badge" id="sidebar-solutions-count">4 Ready</span>
+                </button>
+                <button class="menu-item" data-tab="sensor-net" onclick="switchTab('sensor-net')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+                    <span>Sensors & Drift</span>
+                </button>
+            </nav>
+
+            <!-- Expendo Live Widget: Risk Absorption Budget Meter -->
+            <div class="sidebar-widget-card">
+                <div class="sidebar-widget-header">
+                    <span class="sidebar-widget-title">Resilience Cap</span>
+                    <span class="sidebar-widget-pct" id="sidebarBudgetPct">42%</span>
+                </div>
+                <div class="sidebar-progress-track">
+                    <div class="sidebar-progress-fill" id="sidebarBudgetFill" style="width: 42%;"></div>
+                </div>
+                <div class="sidebar-widget-sub">
+                    <span id="sidebarRiskSpent">Stress: High</span>
+                    <span id="sidebarRiskCap">Capacity: 100%</span>
+                </div>
+            </div>
+
+            <!-- Quick Hazard Filter Chips (Expendo Style) -->
+            <div class="sidebar-section-title">Hazard Quick Select</div>
+            <div class="sidebar-chips-wrap">
+                <button class="sidebar-chip active" id="chip-flood" onclick="setHazardMode('FLOOD')">🌊 Flood</button>
+                <button class="sidebar-chip" id="chip-heat" onclick="setHazardMode('HEAT')">🔥 Heat</button>
+                <button class="sidebar-chip" id="chip-fire" onclick="setHazardMode('FIRE')">🚒 Wildfire</button>
+                <button class="sidebar-chip" id="chip-traffic" onclick="setHazardMode('TRAFFIC')">🚦 Traffic</button>
+            </div>
+
+            <!-- Sidebar Footer with Theme & Sync -->
+            <div class="sidebar-footer">
+                <div class="sidebar-footer-row">
+                    <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                        <span id="themeToggleText">Dark Theme</span>
+                    </button>
+                    <button class="theme-toggle-btn" onclick="trigger90sDemo()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                            <polygon points="5 3 19 12 5 21 5 3"/>
+                        </svg>
+                        <span>90s Demo</span>
+                    </button>
+                </div>
+                <div class="connection-pill">
+                    <span class="live-dot pulse"></span>
+                    <span>ENGINE: <strong id="sidebar-engine-state">v2.0 (ONLINE)</strong></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ============================================================
+             MAIN CONTENT WRAPPER
+             ============================================================ -->
+        <main class="main-wrapper">
+            
+            <!-- STICKY TOP HEADER (Expendo Style with Hazard Tabs) -->
+            <header class="top-header">
+                <div class="header-left">
+                    <div class="search-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" id="globalSearchInput" placeholder="Search nodes (Pipe P-44, Corridor R-42), solutions..." onkeydown="handleSearchKey(event)">
+                    </div>
+
+                    <!-- Multi-Hazard Mode Switcher Tabs (Expendo Tabs) -->
+                    <div class="header-hazard-tabs">
+                        <button class="hazard-tab-btn flood-mode active" id="btnHazardFlood" onclick="setHazardMode('FLOOD')">
+                            <span>🌊 Flood</span>
+                        </button>
+                        <button class="hazard-tab-btn heat-mode" id="btnHazardHeat" onclick="setHazardMode('HEAT')">
+                            <span>🔥 Heat Island</span>
+                        </button>
+                        <button class="hazard-tab-btn fire-mode" id="btnHazardFire" onclick="setHazardMode('FIRE')">
+                            <span>🚒 Wildfire</span>
+                        </button>
+                        <button class="hazard-tab-btn traffic-mode" id="btnHazardTraffic" onclick="setHazardMode('TRAFFIC')">
+                            <span>🚦 Gridlock</span>
+                        </button>
+                    </div>
+
+                    <!-- Region Selector -->
+                    <div class="region-select-box">
+                        <label for="regionSelect">REGION:</label>
+                        <select id="regionSelect" onchange="changeRegion(this.value)">
+                            <option value="chennai_velachery" selected>Chennai Velachery (17k Nodes)</option>
+                            <option value="houston_medical_center">Houston Bayou Metro (Floodplain)</option>
+                            <option value="guwahati_bharalu">Guwahati Bharalu (Hilly Valley)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <label class="btn-header-upload" title="Upload Picture to Reconstruct 3D Model">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        <span>Upload to 3D</span>
+                        <input type="file" id="directImageInput" accept="image/*,.pdf,.tif" style="display:none;" onchange="handleDirectImageUpload(event)">
+                    </label>
+
+                    <div class="user-profile-badge" title="Physical World OS">
+                        <span>RS</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- DASHBOARD BODY CONTAINER -->
+            <div class="dashboard-content">
+                
+                <!-- VIEW 1: 3D DIGITAL TWIN -->
+                <div class="view-panel active" id="view-world">
+                    
+                    <!-- Dynamic Top Summary Cards Row (Changes based on Hazard Mode) -->
+                    <div class="metrics-row" id="metricsSummaryRow">
+                        <!-- Card 1 -->
+                        <div class="stat-card">
+                            <div class="card-icon blue" id="card1-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+                            <div class="card-info">
+                                <div class="card-label-row">
+                                    <span class="card-label" id="card1-label">MAX FLOOD DEPTH</span>
+                                    <span class="prov-tag sim">SIMULATED</span>
+                                </div>
+                                <div class="card-value-group">
+                                    <h3 id="card1-val">0.42 m</h3>
+                                    <span class="trend-badge danger" id="card1-badge">+14cm / hr</span>
+                                </div>
+                                <div class="mini-progress-bar"><div class="fill danger" id="card1-bar" style="width: 70%;"></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="stat-card">
+                            <div class="card-icon amber" id="card2-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div>
+                            <div class="card-info">
+                                <div class="card-label-row">
+                                    <span class="card-label" id="card2-label">SURFACE PEAK TEMP</span>
+                                    <span class="prov-tag sim">SIMULATED</span>
+                                </div>
+                                <div class="card-value-group">
+                                    <h3 id="card2-val">43.8 °C</h3>
+                                    <span class="trend-badge warn" id="card2-badge">Hotspot Active</span>
+                                </div>
+                                <div class="mini-progress-bar"><div class="fill warn" id="card2-bar" style="width: 62%;"></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="stat-card">
+                            <div class="card-icon green" id="card3-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                            <div class="card-info">
+                                <div class="card-label-row">
+                                    <span class="card-label" id="card3-label">DRAIN D-17 LOAD</span>
+                                    <span class="prov-tag der">DERIVED</span>
+                                </div>
+                                <div class="card-value-group">
+                                    <h3 id="card3-val">106%</h3>
+                                    <span class="trend-badge danger" id="card3-badge">SURCHARGED</span>
+                                </div>
+                                <div class="mini-progress-bar"><div class="fill danger" id="card3-bar" style="width: 100%;"></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="stat-card">
+                            <div class="card-icon red" id="card4-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+                            <div class="card-info">
+                                <div class="card-label-row">
+                                    <span class="card-label" id="card4-label">EMERGENCY ACCESS</span>
+                                    <span class="prov-tag est">ESTIMATED</span>
+                                </div>
+                                <div class="card-value-group">
+                                    <h3 id="card4-val">+14.2 min</h3>
+                                    <span class="trend-badge danger" id="card4-badge">SEVERED</span>
+                                </div>
+                                <div class="mini-progress-bar"><div class="fill danger" id="card4-bar" style="width: 85%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3D VIEWPORT & WORKBENCH GRID -->
+                    <div class="viewport-workspace-grid">
+                        
+                        <!-- 3D STAGE -->
+                        <div class="viewport-stage">
+                            <div id="threejs-canvas-container"></div>
+                            
+                            <!-- Stage Overlays -->
+                            <div class="stage-overlay-top">
+                                <div class="overlay-pill">
+                                    <span class="live-dot pulse"></span>
+                                    <span id="viewport-status-text">REAL WEB GRAPHICS • MULTI-HAZARD READY</span>
+                                </div>
+                                <div class="overlay-modes-toolbar" id="diagnosticModesToolbar">
+                                    <button class="mode-tab-btn active" onclick="setVisualDiagnosticMode('REALITY')">REALITY</button>
+                                    <button class="mode-tab-btn" onclick="setVisualDiagnosticMode('THERMAL')">THERMAL IR</button>
+                                    <button class="mode-tab-btn" onclick="setVisualDiagnosticMode('FIRE_DYNAMICS')">FIRE FRONT</button>
+                                    <button class="mode-tab-btn" onclick="setVisualDiagnosticMode('TRAFFIC_FLOW')">TRAFFIC</button>
+                                    <button class="mode-tab-btn" onclick="setVisualDiagnosticMode('UNDERGROUND')">SUBSURFACE</button>
+                                </div>
+                            </div>
+
+                            <div class="stage-overlay-sub-top">
+                                <div class="overlay-camera-toolbar">
+                                    <span class="cam-label">CAM:</span>
+                                    <button class="cam-btn active" onclick="set3DCameraLevel('AERIAL')">Aerial</button>
+                                    <button class="cam-btn" onclick="set3DCameraLevel('CITY')">City</button>
+                                    <button class="cam-btn" onclick="set3DCameraLevel('STREET')">Street</button>
+                                    <button class="cam-btn" onclick="set3DCameraLevel('GROUND')">Ground</button>
+                                    <button class="cam-btn" onclick="set3DCameraLevel('UNDERGROUND')">Subterranean</button>
+                                    <span style="color:var(--border-color); margin: 0 4px;">|</span>
+                                    <button class="cam-btn" onclick="setLightingMode('day')">☀️ Day</button>
+                                    <button class="cam-btn" onclick="setLightingMode('twilight')">🌆 Dusk</button>
+                                    <button class="cam-btn" onclick="setLightingMode('night')">🌙 Night</button>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Left Live Telemetry -->
+                            <div class="stage-overlay-bottom-left">
+                                <div class="hud-telemetry-box" id="hudTelemetryBox">
+                                    <div class="telemetry-header" id="hudTelemetryHeader">LIVE PHYSICAL SIMULATION TELEMETRY</div>
+                                    <div class="telemetry-line"><span id="hud-line1-lbl">Rainfall Rate:</span> <strong id="hud-line1-val">65.0 mm/hr</strong></div>
+                                    <div class="telemetry-line"><span id="hud-line2-lbl">Inflow Volume:</span> <strong id="hud-line2-val">14.2 m³/s</strong></div>
+                                    <div class="telemetry-line"><span id="hud-line3-lbl">Conduit Surcharge:</span> <strong id="hud-line3-val" style="color:var(--danger)">106% (Pipe P-44)</strong></div>
+                                    <div class="telemetry-line"><span id="hud-line4-lbl">Active Interventions:</span> <strong id="hud-line4-val" style="color:#a855f7">0 Active</strong></div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Right Hints -->
+                            <div class="stage-overlay-bottom-right">
+                                <div class="viewport-interaction-hint">
+                                    <span>Orbit: Left Drag • Zoom: Scroll • Pan: Right Drag • Click building/pipe to inspect</span>
+                                </div>
+                            </div>
+
+                            <!-- Upload Scanning Overlay -->
+                            <div class="scanning-modal-overlay" id="scanningOverlay" style="display:none;">
+                                <div class="scanning-card">
+                                    <div class="scanner-spinner"></div>
+                                    <h3 id="scanProgressTitle">Perceiving Uploaded Image...</h3>
+                                    <p id="scanProgressSubtitle">Generating multi-hazard 3D mesh with real PBR materials...</p>
+                                    <div class="scanner-bar"><div class="scanner-fill" id="scannerFillBar"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT WORKBENCH PANEL -->
+                        <div class="workbench-column">
+                            
+                            <!-- ACTION GOVERNOR CARD -->
+                            <div class="governor-card">
+                                <div class="card-header-styled">
+                                    <div class="hdr-left">
+                                        <span>⚡</span>
+                                        <h4 id="governorHdr">Action Governor</h4>
+                                    </div>
+                                    <span class="status-tag live">AI ACTIVE</span>
+                                </div>
+                                <p class="card-desc" id="governorDesc">Enter an objective or choose an AI solution below. Solutions will animate live in 3D and measurably fix the problem.</p>
+                                
+                                <div class="input-action-group">
+                                    <input type="text" id="nlPromptBar" value="Prevent arterial flooding and restore emergency access">
+                                    <button class="btn-primary-gradient" id="btnRunGovernor" onclick="executeGovernorSearch()">Run Minimal Force Search</button>
+                                </div>
+
+                                <div class="quick-prompts-row" id="quickPromptsRow">
+                                    <span class="quick-tag" onclick="setQuickPrompt('Drain Pipe P-44 Upsizing')">🌊 Upsize Pipe P-44</span>
+                                    <span class="quick-tag" onclick="setQuickPrompt('Cool Roof Retrofit')">🔥 Cool Roofs</span>
+                                    <span class="quick-tag" onclick="setQuickPrompt('WUI Defensible Firebreak')">🚒 Firebreak</span>
+                                    <span class="quick-tag" onclick="setQuickPrompt('Contraflow Emergency Corridor')">🚑 Emergency Lane</span>
+                                </div>
+                            </div>
+
+                            <!-- AI SOLUTION / PARETO RECOMMENDATION (CLICK TO IMPLEMENT IN 3D) -->
+                            <div class="recommendation-card" id="paretoCardContainer">
+                                <div class="card-header-styled">
+                                    <h4 id="paretoPlanHeader">Recommended Solution</h4>
+                                    <span class="badge-pareto" id="paretoBadge">OPTIMAL</span>
+                                </div>
+
+                                <div class="plan-summary-box">
+                                    <div class="plan-main-title" id="paretoPlanTitle">Pipe P-44 Upsizing + Memorial Bioswale</div>
+                                    <div class="plan-metrics-grid">
+                                        <div class="pm-item"><span class="lbl">PROBLEM FIX</span><span class="val green" id="paretoRiskRed">-81.0% Depth</span></div>
+                                        <div class="pm-item"><span class="lbl">CAPITAL COST</span><span class="val" id="paretoCost">₹25.0 Lakh</span></div>
+                                        <div class="pm-item"><span class="lbl">DISRUPTION</span><span class="val" id="paretoDisrupt">LOW (14d)</span></div>
+                                        <div class="pm-item"><span class="lbl">RESILIENCE</span><span class="val highlight" id="paretoRobust">92.4%</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="actions-checklist" id="paretoActionsList">
+                                    <div class="check-item"><span class="dot green"></span> Upsize interceptor Pipe P-44 from DN600 to DN1200 (+150% flow)</div>
+                                    <div class="check-item"><span class="dot green"></span> Construct 350m permeable roadside bioswale (1,200 m³ capacity)</div>
+                                    <div class="check-item"><span class="dot green"></span> Real-time: water visibly recedes to 0.08m in 3D</div>
+                                </div>
+
+                                <button class="btn-install-physical" id="btnInstallVirtual" onclick="implementCurrentSolution3D()">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    <span id="btnInstallText">Implement in 3D (Fix Problem)</span>
+                                </button>
+                            </div>
+
+                            <!-- NECESSARY QUESTION ENGINE -->
+                            <div class="question-card" id="questionCardContainer">
+                                <div class="card-header-styled">
+                                    <div class="hdr-left">
+                                        <span>❓</span>
+                                        <h4>Necessary Question Engine</h4>
+                                    </div>
+                                    <span class="status-tag live">ADAPTIVE</span>
+                                </div>
+                                <p class="q-body" id="questionText">Is the tidal outfall gate at Outfall O-3 equipped with an automated backflow flap?</p>
+                                <div class="q-options-list" id="questionOptionsList">
+                                    <button class="q-opt-btn" onclick="answerQuestionChoice('Yes, motorized with SCADA telemetry')">1. Yes, motorized with SCADA telemetry</button>
+                                    <button class="q-opt-btn" onclick="answerQuestionChoice('No, free gravity discharge with high-tide backwater')">2. No, free gravity discharge (risk of backwater)</button>
+                                    <button class="q-opt-btn" onclick="answerQuestionChoice('Passive rubber duckbill check valve')">3. Passive rubber duckbill check valve</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW 2: DISASTER LAB -->
+                <div class="view-panel" id="view-disaster-lab">
+                    <div class="governor-card">
+                        <h3>Disaster Lab Multi-Hazard Simulators</h3>
+                        <p class="card-desc">Simulate extreme weather, urban heat islands, conflagrations, and traffic collapses with numerical verification.</p>
+                        <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem;">
+                            <!-- Flood Sim Box -->
+                            <div class="plan-summary-box">
+                                <h4>🌊 Extreme Flood Simulation</h4>
+                                <p style="font-size:0.78rem; color:var(--text-muted); margin: 6px 0;">Control rainfall intensity (mm/hr) and overland runoff accumulation.</p>
+                                <input type="range" min="10" max="150" value="75" id="sliderRainLab" style="width:100%; margin: 8px 0;" oninput="document.getElementById('lblRainLab').innerText = this.value + ' mm/hr'">
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem;">
+                                    <span>Intensity: <strong id="lblRainLab">75 mm/hr</strong></span>
+                                    <button class="sidebar-chip active" onclick="runFloodSimulation(parseFloat(document.getElementById('sliderRainLab').value))">Run Flood</button>
+                                </div>
+                            </div>
+                            <!-- Heat Sim Box -->
+                            <div class="plan-summary-box">
+                                <h4>🔥 Urban Heat Island Simulation</h4>
+                                <p style="font-size:0.78rem; color:var(--text-muted); margin: 6px 0;">Solar irradiance and albedo thermal radiation trapping.</p>
+                                <input type="range" min="30" max="55" value="44" id="sliderHeatLab" style="width:100%; margin: 8px 0;" oninput="document.getElementById('lblHeatLab').innerText = this.value + ' °C'">
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem;">
+                                    <span>Target Peak: <strong id="lblHeatLab">44 °C</strong></span>
+                                    <button class="sidebar-chip active" onclick="runHeatSimulation(parseFloat(document.getElementById('sliderHeatLab').value))">Run Heat</button>
+                                </div>
+                            </div>
+                            <!-- Fire Sim Box -->
+                            <div class="plan-summary-box">
+                                <h4>🚒 Wildfire Spread (Rothermel)</h4>
+                                <p style="font-size:0.78rem; color:var(--text-muted); margin: 6px 0;">Wind speed & moisture-driven flame front propagation.</p>
+                                <input type="range" min="10" max="65" value="35" id="sliderFireLab" style="width:100%; margin: 8px 0;" oninput="document.getElementById('lblFireLab').innerText = this.value + ' km/h wind'">
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem;">
+                                    <span>Wind Speed: <strong id="lblFireLab">35 km/h wind</strong></span>
+                                    <button class="sidebar-chip active" onclick="runFireSimulation(parseFloat(document.getElementById('sliderFireLab').value))">Run Wildfire</button>
+                                </div>
+                            </div>
+                            <!-- Traffic Sim Box -->
+                            <div class="plan-summary-box">
+                                <h4>🚦 Gridlock & Arterial Evacuation</h4>
+                                <p style="font-size:0.78rem; color:var(--text-muted); margin: 6px 0;">Rush hour bottleneck propagation and ambulance response delays.</p>
+                                <input type="range" min="10" max="100" value="85" id="sliderTrafficLab" style="width:100%; margin: 8px 0;" oninput="document.getElementById('lblTrafficLab').innerText = this.value + '% V/C'">
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem;">
+                                    <span>Corridor Load: <strong id="lblTrafficLab">85% V/C</strong></span>
+                                    <button class="sidebar-chip active" onclick="runTrafficSimulation(parseFloat(document.getElementById('sliderTrafficLab').value))">Run Gridlock</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW 3: INTERVENTION PLANS -->
+                <div class="view-panel" id="view-interventions">
+                    <div class="governor-card">
+                        <h3>Catalog of Verified AI Interventions</h3>
+                        <p class="card-desc">Click any solution to visualize its implementation in 3D and see the physical world resolve the crisis.</p>
+                        <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;" id="allInterventionsList">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW 4: CAUSAL BRAIN -->
+                <div class="view-panel" id="view-causal-brain">
+                    <div class="governor-card">
+                        <h3>Causal Brain Directed Acyclic Graph (DAG)</h3>
+                        <p class="card-desc">Inspect cross-system causal chains linking weather events to structural and social consequences.</p>
+                        <div class="plan-summary-box" style="margin-top:10px;">
+                            <div class="check-item"><span class="dot green"></span> Monsoon Rainfall (95 mm/hr) &rarr; Soil Infiltration Exhausted</div>
+                            <div class="check-item"><span class="dot green"></span> Runoff Accumulation &rarr; Drain D-17 Overloaded (165%)</div>
+                            <div class="check-item"><span class="dot green"></span> Pipe P-44 Backpressure &rarr; Arterial Corridor R-42 Submerged (0.42m)</div>
+                            <div class="check-item"><span class="dot green"></span> Road Inundation &rarr; Ambulance Transit Delayed (+14.2 min)</div>
+                        </div>
+                        <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;">
+                            <button class="btn-sidebar-create" style="flex:1; min-width:200px; height:38px; font-size:0.82rem;" onclick="runInteractiveCounterfactual()">
+                                <span>Run Counterfactual Inference</span>
+                            </button>
+                            <button class="btn-sidebar-create" style="flex:1; min-width:200px; height:38px; font-size:0.82rem;" onclick="traceFailureChain('road_accessibility')">
+                                <span>Trace Failure Root Cause</span>
+                            </button>
+                            <button class="btn-sidebar-create" style="flex:1; min-width:200px; height:38px; font-size:0.82rem;" onclick="runCausalXRay()">
+                                <span>Run Causal X-Ray Analysis</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW 5: SENSOR NETWORK -->
+                <div class="view-panel" id="view-sensor-net">
+                    <div class="governor-card">
+                        <h3>Real-Time IoT Sensor Telemetry & Drift Detection</h3>
+                        <p class="card-desc">Compares live physical sensor readings against numerical simulations to flag reality drift.</p>
+                        <div class="plan-metrics-grid" style="margin-top:10px;">
+                            <div class="pm-item"><span class="lbl">SENSOR WL-01</span><span class="val green">0.41 m (Delta: 0.01m)</span></div>
+                            <div class="pm-item"><span class="lbl">FLOW SENSOR F-44</span><span class="val highlight">4.3 m³/s (Throttled)</span></div>
+                            <div class="pm-item"><span class="lbl">THERMAL SENSOR T-12</span><span class="val">43.2 °C (Hotspot)</span></div>
+                            <div class="pm-item"><span class="lbl">DRIFT STATUS</span><span class="val green">GREEN (CALIBRATED)</span></div>
+                        </div>
+                        <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;">
+                            <button class="btn-sidebar-create" style="flex:1; min-width:200px; height:38px; font-size:0.82rem;" onclick="pollLiveSensors()">
+                                <span>Poll Live IoT Telemetry</span>
+                            </button>
+                            <button class="btn-sidebar-create" style="flex:1; min-width:200px; height:38px; font-size:0.82rem;" onclick="checkRealityDrift()">
+                                <span>Verify Reality Feedback Lock</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW 6: REALITY PERCEPTION -->
+                <div class="view-panel" id="view-reality-scan">
+                    <div class="governor-card">
+                        <h3>Deep Perception & Multimodal Inundation Scanner</h3>
+                        <p class="card-desc">Classifies aerial imagery, generates semantic spatial graphs, and identifies critical nodes.</p>
+                        <button class="btn-primary-gradient" style="margin-top:10px;" onclick="triggerScanPerception()">Run Regional Scan</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Main Application Logic Script -->
+    <script src="app.js"></script>
+</body>
+</html>
