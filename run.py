@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Reality Sculptor — Physical World Programming Server Runner
 ============================================================
@@ -16,8 +17,21 @@ if sys.platform == "win32":
     except Exception:
         pass
 
-# Add backend and ml to sys.path so all imports resolve seamlessly
 current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Auto-detect virtualenv site-packages if invoked outside activated venv
+for venv_path in [
+    os.path.join(current_dir, ".venv", "lib"),
+    os.path.join(current_dir, "venv", "lib"),
+    "/opt/render/project/src/.venv/lib"
+]:
+    if os.path.isdir(venv_path):
+        for entry in os.listdir(venv_path):
+            sp = os.path.join(venv_path, entry, "site-packages")
+            if os.path.isdir(sp) and sp not in sys.path:
+                sys.path.insert(0, sp)
+
+# Add backend and ml to sys.path so all imports resolve seamlessly
 backend_dir = os.path.join(current_dir, "backend")
 ml_dir = os.path.join(current_dir, "ml")
 
