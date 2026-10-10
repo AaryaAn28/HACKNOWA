@@ -308,6 +308,48 @@
                                 </div>
                             </div>
 
+                            <!-- 3D Spatial Node Inspector Floating HUD -->
+                            <div class="node-inspector-hud" id="nodeInspectorHud">
+                                <div class="inspector-header">
+                                    <div class="inspector-title-wrap">
+                                        <h4 id="inspNodeTitle">Pipe P-44 Interceptor</h4>
+                                        <span id="inspNodeType">Subsurface Hydraulic Conduit (DN600)</span>
+                                    </div>
+                                    <button class="cam-btn" onclick="closeNodeInspector()">✕</button>
+                                </div>
+                                <div class="inspector-metrics-grid">
+                                    <div class="insp-item"><span class="lbl">DIMENSION</span><div class="val" id="inspNodeDim">DN600 mm</div></div>
+                                    <div class="insp-item"><span class="lbl">FLOW LOAD</span><div class="val" id="inspNodeLoad" style="color:var(--danger)">106% Surcharged</div></div>
+                                    <div class="insp-item"><span class="lbl">HAZARD ZONE</span><div class="val" id="inspNodeZone">Inundation Risk</div></div>
+                                    <div class="insp-item"><span class="lbl">CONFIDENCE</span><div class="val" id="inspNodeConf" style="color:#34d399">OBSERVED (98%)</div></div>
+                                </div>
+                                <div class="inspector-actions">
+                                    <button class="btn-sidebar-create" style="flex:1; height:32px; font-size:0.75rem;" onclick="targetInterventionOnCurrentNode()">
+                                        <span>Target Intervention</span>
+                                    </button>
+                                    <button class="cam-btn" style="height:32px; font-size:0.75rem;" onclick="isolateNodeInCausalBrain()">
+                                        <span>Isolate in Causal DAG</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 90-Second Cinematic Demo HUD -->
+                            <div class="cinematic-demo-hud" id="cinematicDemoHud">
+                                <div class="demo-hud-top">
+                                    <div class="demo-title-group">
+                                        <span class="demo-pulse-pill">90s Live Demo</span>
+                                        <span class="demo-step-text" id="demoStepText">1/6: Aerial Geospatial Survey</span>
+                                    </div>
+                                    <div style="display:flex; align-items:center; gap:8px;">
+                                        <span style="font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:var(--text-muted);" id="demoTimerText">00:00 / 01:30</span>
+                                        <button class="cam-btn" onclick="stop90sDemo()" title="Exit Demo">✕</button>
+                                    </div>
+                                </div>
+                                <div class="demo-progress-track">
+                                    <div class="demo-progress-fill" id="demoProgressFill" style="width: 15%;"></div>
+                                </div>
+                            </div>
+
                             <!-- Upload Scanning Overlay -->
                             <div class="scanning-modal-overlay" id="scanningOverlay" style="display:none;">
                                 <div class="scanning-card">
@@ -369,6 +411,10 @@
                                     <div class="check-item"><span class="dot green"></span> Real-time: water visibly recedes to 0.08m in 3D</div>
                                 </div>
 
+                                <div id="paretoResolvedBanner" style="display:none; background:var(--success-bg); border:1px solid rgba(16,185,129,0.3); border-radius:var(--radius-sm); padding:8px 12px; margin-top:8px; font-size:0.8rem; color:var(--success-text);">
+                                    ✓ Solution Installed: 3D world physically reacted & crisis is resolved.
+                                </div>
+
                                 <button class="btn-install-physical" id="btnInstallVirtual" onclick="implementCurrentSolution3D()">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                                     <span id="btnInstallText">Implement in 3D (Fix Problem)</span>
@@ -390,6 +436,9 @@
                                     <button class="q-opt-btn" onclick="answerQuestionChoice('No, free gravity discharge with high-tide backwater')">2. No, free gravity discharge (risk of backwater)</button>
                                     <button class="q-opt-btn" onclick="answerQuestionChoice('Passive rubber duckbill check valve')">3. Passive rubber duckbill check valve</button>
                                 </div>
+                                <div id="questionFeedbackBanner" style="display:none; background:var(--primary-subtle); border:1px solid rgba(124,58,237,0.3); border-radius:var(--radius-sm); padding:6px 10px; margin-top:8px; font-size:0.75rem; color:#c084fc;">
+                                    ✓ Calibration updated: Parameter confidence boosted to 98% (OBSERVED).
+                                </div>
                             </div>
 
                         </div>
@@ -399,15 +448,22 @@
                 <!-- VIEW 2: DISASTER LAB -->
                 <div class="view-panel" id="view-disaster-lab">
                     <div class="governor-card">
-                        <h3>Disaster Lab Multi-Hazard Simulators</h3>
-                        <p class="card-desc">Simulate extreme weather, urban heat islands, conflagrations, and traffic collapses with numerical verification.</p>
+                        <div class="card-header-styled">
+                            <div class="hdr-left">
+                                <span>🔬</span>
+                                <h3>Disaster Lab Multi-Hazard Simulators</h3>
+                            </div>
+                            <span class="status-tag live">NUMERICAL PHYSICS READY</span>
+                        </div>
+                        <p class="card-desc">Simulate extreme weather, urban heat islands, conflagrations, and traffic collapses with real-time numerical verification.</p>
+                        
                         <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem;">
                             <!-- Flood Sim Box -->
                             <div class="plan-summary-box">
                                 <h4>🌊 Extreme Flood Simulation</h4>
-                                <p style="font-size:0.78rem; color:var(--text-muted); margin: 6px 0;">Control rainfall intensity (mm/hr) and overland runoff accumulation.</p>
+                                <p style="font-size:0.78rem; color:var(--text-muted); margin: 6px 0;">Saint-Venant overland runoff & subterranean pipe surcharge.</p>
                                 <input type="range" min="10" max="150" value="75" id="sliderRainLab" style="width:100%; margin: 8px 0;" oninput="document.getElementById('lblRainLab').innerText = this.value + ' mm/hr'">
-                                <div style="display:flex; justify-content:space-between; font-size:0.8rem;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
                                     <span>Intensity: <strong id="lblRainLab">75 mm/hr</strong></span>
                                     <button class="sidebar-chip active" onclick="runFloodSimulation(parseFloat(document.getElementById('sliderRainLab').value))">Run Flood</button>
                                 </div>
@@ -415,9 +471,9 @@
                             <!-- Heat Sim Box -->
                             <div class="plan-summary-box">
                                 <h4>🔥 Urban Heat Island Simulation</h4>
-                                <p style="font-size:0.78rem; color:var(--text-muted); margin: 6px 0;">Solar irradiance and albedo thermal radiation trapping.</p>
+                                <p style="font-size:0.78rem; color:var(--text-muted); margin: 6px 0;">Solar irradiance and albedo thermal radiation balance.</p>
                                 <input type="range" min="30" max="55" value="44" id="sliderHeatLab" style="width:100%; margin: 8px 0;" oninput="document.getElementById('lblHeatLab').innerText = this.value + ' °C'">
-                                <div style="display:flex; justify-content:space-between; font-size:0.8rem;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
                                     <span>Target Peak: <strong id="lblHeatLab">44 °C</strong></span>
                                     <button class="sidebar-chip active" onclick="runHeatSimulation(parseFloat(document.getElementById('sliderHeatLab').value))">Run Heat</button>
                                 </div>
@@ -425,9 +481,9 @@
                             <!-- Fire Sim Box -->
                             <div class="plan-summary-box">
                                 <h4>🚒 Wildfire Spread (Rothermel)</h4>
-                                <p style="font-size:0.78rem; color:var(--text-muted); margin: 6px 0;">Wind speed & moisture-driven flame front propagation.</p>
+                                <p style="font-size:0.78rem; color:var(--text-muted); margin: 6px 0;">Wind vector & fuel moisture flame front propagation.</p>
                                 <input type="range" min="10" max="65" value="35" id="sliderFireLab" style="width:100%; margin: 8px 0;" oninput="document.getElementById('lblFireLab').innerText = this.value + ' km/h wind'">
-                                <div style="display:flex; justify-content:space-between; font-size:0.8rem;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
                                     <span>Wind Speed: <strong id="lblFireLab">35 km/h wind</strong></span>
                                     <button class="sidebar-chip active" onclick="runFireSimulation(parseFloat(document.getElementById('sliderFireLab').value))">Run Wildfire</button>
                                 </div>
@@ -435,39 +491,165 @@
                             <!-- Traffic Sim Box -->
                             <div class="plan-summary-box">
                                 <h4>🚦 Gridlock & Arterial Evacuation</h4>
-                                <p style="font-size:0.78rem; color:var(--text-muted); margin: 6px 0;">Rush hour bottleneck propagation and ambulance response delays.</p>
+                                <p style="font-size:0.78rem; color:var(--text-muted); margin: 6px 0;">Rush hour bottleneck propagation & emergency transit delay.</p>
                                 <input type="range" min="10" max="100" value="85" id="sliderTrafficLab" style="width:100%; margin: 8px 0;" oninput="document.getElementById('lblTrafficLab').innerText = this.value + '% V/C'">
-                                <div style="display:flex; justify-content:space-between; font-size:0.8rem;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem;">
                                     <span>Corridor Load: <strong id="lblTrafficLab">85% V/C</strong></span>
                                     <button class="sidebar-chip active" onclick="runTrafficSimulation(parseFloat(document.getElementById('sliderTrafficLab').value))">Run Gridlock</button>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Cascading Multi-Hazard Catastrophe Box -->
+                        <div class="plan-summary-box" style="margin-top:1rem; border-left: 4px solid #ef4444;">
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <div>
+                                    <h4 style="color:#f87171;">⚠️ Coupled Cascading Disaster Simulator</h4>
+                                    <p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">Evaluates compound chain: Rainfall Inundation &rarr; Drainage Failure &rarr; Road Closure &rarr; Ambulance Route Severance.</p>
+                                </div>
+                                <button class="btn-primary-gradient" style="background:linear-gradient(135deg, #ef4444 0%, #dc2626 100%);" onclick="runCascadeSimulation()">Run Disaster Cascade</button>
+                            </div>
+                        </div>
+
+                        <!-- Live Simulation Output Console & Telemetry Dashboard -->
+                        <div class="sim-results-panel" id="simResultsPanel">
+                            <div class="sim-results-header">
+                                <h4><span>📊</span> Active Numerical Simulation Diagnostics</h4>
+                                <span class="badge-pareto" id="simActiveHazardBadge">FLOOD RUNTIME</span>
+                            </div>
+                            <div class="inspector-metrics-grid" style="grid-template-columns: repeat(4, 1fr);" id="simResultsGrid">
+                                <div class="insp-item"><span class="lbl">PEAK HAZARD METRIC</span><div class="val" id="resM1">0.42 m Depth</div></div>
+                                <div class="insp-item"><span class="lbl">INFRASTRUCTURE STRESS</span><div class="val" id="resM2" style="color:var(--danger)">106% Surcharge</div></div>
+                                <div class="insp-item"><span class="lbl">EMERGENCY ACCESS</span><div class="val" id="resM3" style="color:var(--danger)">+14.2 min Delay</div></div>
+                                <div class="insp-item"><span class="lbl">COMPLIANCE / RISK</span><div class="val" id="resM4" style="color:#ef4444">CRITICAL (HIGH)</div></div>
+                            </div>
+                            
+                            <div>
+                                <span style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase;">Time-Series Propagation Timeline (60 Minutes)</span>
+                                <div class="sim-timeseries-bar">
+                                    <div class="ts-step active">T+0m: Normal</div>
+                                    <div class="ts-step active">T+15m: Runoff Rise</div>
+                                    <div class="ts-step active">T+30m: Conduit Peak</div>
+                                    <div class="ts-step active">T+45m: Road Severed</div>
+                                    <div class="ts-step active">T+60m: Surcharge</div>
+                                </div>
+                            </div>
+
+                            <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:8px;">
+                                <button class="cam-btn" onclick="switchTab('world')">Focus 3D Viewport</button>
+                                <button class="btn-sidebar-create" style="height:34px; font-size:0.8rem;" onclick="switchTab('world'); executeGovernorSearch();">
+                                    <span>Synthesize Minimal Force Fix</span>
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
                 <!-- VIEW 3: INTERVENTION PLANS -->
                 <div class="view-panel" id="view-interventions">
                     <div class="governor-card">
-                        <h3>Catalog of Verified AI Interventions</h3>
+                        <div class="card-header-styled">
+                            <div class="hdr-left">
+                                <span>🛠️</span>
+                                <h3>Catalog of Verified AI Interventions</h3>
+                            </div>
+                            <span class="status-tag live">PARETO OPTIMIZED</span>
+                        </div>
                         <p class="card-desc">Click any solution to visualize its implementation in 3D and see the physical world resolve the crisis.</p>
+                        
+                        <!-- Filter Bar -->
+                        <div style="display:flex; gap:8px; margin: 12px 0; flex-wrap:wrap; align-items:center;">
+                            <span style="font-size:0.78rem; color:var(--text-muted);">FILTER HAZARD:</span>
+                            <button class="sidebar-chip active" onclick="filterPlansHazard('ALL')">All Plans</button>
+                            <button class="sidebar-chip" onclick="filterPlansHazard('FLOOD')">🌊 Flood</button>
+                            <button class="sidebar-chip" onclick="filterPlansHazard('HEAT')">🔥 Heat</button>
+                            <button class="sidebar-chip" onclick="filterPlansHazard('FIRE')">🚒 Fire</button>
+                            <button class="sidebar-chip" onclick="filterPlansHazard('TRAFFIC')">🚦 Traffic</button>
+                        </div>
+
                         <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;" id="allInterventionsList">
                             <!-- Populated dynamically via JS -->
                         </div>
+
+                        <!-- Adversarial Climate Stress Test Modal/Card -->
+                        <div class="plan-summary-box" style="margin-top:1rem; border-left: 4px solid #a855f7;">
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <div>
+                                    <h4 style="color:#c084fc;">🔬 Multi-Future Adversarial Stress Test Suite</h4>
+                                    <p style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">Tests civil plans across 4 worst-case futures: 100-Yr Monsoon, 30% Sediment Blockage, Power Outage, and Sea Level Backwater.</p>
+                                </div>
+                                <button class="btn-sidebar-create" style="height:36px; font-size:0.82rem;" onclick="runAdversarialStressTest()">
+                                    <span>Execute Stress Matrix</span>
+                                </button>
+                            </div>
+                            <div id="stressTestResultsGrid" style="display:none; grid-template-columns: repeat(4, 1fr); gap:8px; margin-top:12px;">
+                                <div class="insp-item"><span class="lbl">100-YR MONSOON</span><div class="val" style="color:#34d399">PASSED (92.4%)</div></div>
+                                <div class="insp-item"><span class="lbl">30% SEDIMENT</span><div class="val" style="color:#34d399">PASSED (86.1%)</div></div>
+                                <div class="insp-item"><span class="lbl">HIGH TIDE SURGE</span><div class="val" style="color:#fbbf24">MARGINAL (78.5%)</div></div>
+                                <div class="insp-item"><span class="lbl">GRID FAILURE</span><div class="val" style="color:#34d399">PASSED (95.0%)</div></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
                 <!-- VIEW 4: CAUSAL BRAIN -->
                 <div class="view-panel" id="view-causal-brain">
                     <div class="governor-card">
-                        <h3>Causal Brain Directed Acyclic Graph (DAG)</h3>
-                        <p class="card-desc">Inspect cross-system causal chains linking weather events to structural and social consequences.</p>
-                        <div class="plan-summary-box" style="margin-top:10px;">
-                            <div class="check-item"><span class="dot green"></span> Monsoon Rainfall (95 mm/hr) &rarr; Soil Infiltration Exhausted</div>
-                            <div class="check-item"><span class="dot green"></span> Runoff Accumulation &rarr; Drain D-17 Overloaded (165%)</div>
-                            <div class="check-item"><span class="dot green"></span> Pipe P-44 Backpressure &rarr; Arterial Corridor R-42 Submerged (0.42m)</div>
-                            <div class="check-item"><span class="dot green"></span> Road Inundation &rarr; Ambulance Transit Delayed (+14.2 min)</div>
+                        <div class="card-header-styled">
+                            <div class="hdr-left">
+                                <span>🧠</span>
+                                <h3>Causal Brain Directed Acyclic Graph (DAG)</h3>
+                            </div>
+                            <span class="status-tag live">JUDEA PEARL CAUSAL ENGINE</span>
                         </div>
+                        <p class="card-desc">Inspect cross-system causal chains linking weather events to structural bottlenecks and emergency transit consequences.</p>
+                        
+                        <!-- Interactive Visual SVG Causal Graph -->
+                        <div class="causal-svg-container">
+                            <svg class="causal-svg" id="causalGraphSvg" viewBox="0 0 900 240">
+                                <!-- Edges -->
+                                <line x1="80" y1="120" x2="210" y2="120" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow)"/>
+                                <line x1="210" y1="120" x2="350" y2="120" stroke="#7c3aed" stroke-width="2.5"/>
+                                <line x1="350" y1="60" x2="350" y2="120" stroke="#10b981" stroke-width="2.5" stroke-dasharray="4"/>
+                                <line x1="350" y1="120" x2="500" y2="120" stroke="#ef4444" stroke-width="3" id="svgEdgeCritical"/>
+                                <line x1="500" y1="120" x2="650" y2="120" stroke="#ef4444" stroke-width="3"/>
+                                <line x1="650" y1="120" x2="800" y2="120" stroke="#ef4444" stroke-width="3"/>
+                                
+                                <!-- Nodes -->
+                                <g class="svg-node" onclick="inspectCausalNode('rainfall')" transform="translate(80,120)">
+                                    <circle r="28" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+                                    <text text-anchor="middle" dy="4" fill="#f8fafc" font-size="11">Rainfall</text>
+                                </g>
+                                <g class="svg-node" onclick="inspectCausalNode('runoff')" transform="translate(210,120)">
+                                    <circle r="28" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+                                    <text text-anchor="middle" dy="4" fill="#f8fafc" font-size="11">Runoff</text>
+                                </g>
+                                <g class="svg-node" onclick="inspectCausalNode('drain_load')" transform="translate(350,120)">
+                                    <circle r="30" fill="#2d1215" stroke="#ef4444" stroke-width="2.5" id="svgNodeDrain"/>
+                                    <text text-anchor="middle" dy="4" fill="#f87171" font-size="11" font-weight="bold">Drain D-17</text>
+                                </g>
+                                <g class="svg-node" onclick="inspectCausalNode('pipe_capacity')" transform="translate(350,45)">
+                                    <circle r="24" fill="#0f291e" stroke="#10b981" stroke-width="2"/>
+                                    <text text-anchor="middle" dy="4" fill="#34d399" font-size="10">Pipe P-44</text>
+                                </g>
+                                <g class="svg-node" onclick="inspectCausalNode('flood_depth')" transform="translate(500,120)">
+                                    <circle r="30" fill="#2d1215" stroke="#ef4444" stroke-width="2.5"/>
+                                    <text text-anchor="middle" dy="4" fill="#f87171" font-size="11" font-weight="bold">Depth (0.42m)</text>
+                                </g>
+                                <g class="svg-node" onclick="inspectCausalNode('road_accessibility')" transform="translate(650,120)">
+                                    <circle r="28" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+                                    <text text-anchor="middle" dy="4" fill="#fbbf24" font-size="10">Road R-42</text>
+                                </g>
+                                <g class="svg-node" onclick="inspectCausalNode('emergency_delay')" transform="translate(800,120)">
+                                    <circle r="30" fill="#2d1215" stroke="#ef4444" stroke-width="2.5"/>
+                                    <text text-anchor="middle" dy="4" fill="#f87171" font-size="10" font-weight="bold">Ambulance</text>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <!-- Causal Action Buttons -->
                         <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;">
                             <button class="btn-sidebar-create" style="flex:1; min-width:200px; height:38px; font-size:0.82rem;" onclick="runInteractiveCounterfactual()">
                                 <span>Run Counterfactual Inference</span>
@@ -479,20 +661,92 @@
                                 <span>Run Causal X-Ray Analysis</span>
                             </button>
                         </div>
+
+                        <!-- 3 Functional Interactive Panels Below Graph -->
+                        <div class="causal-interactive-grid">
+                            <!-- Panel 1: Counterfactual Laboratory -->
+                            <div class="causal-panel-box" id="causalPanelCounterfactual">
+                                <h5><span>🔬</span> Counterfactual do-Calculus</h5>
+                                <p style="font-size:0.75rem; color:var(--text-muted);">Simulate hypothetical intervention states without re-running entire fluid grid.</p>
+                                <div class="insp-item"><span class="lbl">CONDITION:</span><div class="val" style="color:#c084fc;">do(Pipe Capacity = 6.0 m³/s)</div></div>
+                                <div class="insp-item"><span class="lbl">FLOOD DEPTH:</span><div class="val" style="color:#34d399;">0.42m &rarr; 0.14m (-67%)</div></div>
+                                <div class="insp-item"><span class="lbl">EMERGENCY DELAY:</span><div class="val" style="color:#34d399;">+14.2m &rarr; +1.2m (-92%)</div></div>
+                            </div>
+                            
+                            <!-- Panel 2: Root-Cause Backtracking -->
+                            <div class="causal-panel-box" id="causalPanelFailureChain">
+                                <h5><span>⚠️</span> Root-Cause Backtracker</h5>
+                                <p style="font-size:0.75rem; color:var(--text-muted);">Traced from emergency severance back to root trigger:</p>
+                                <div style="font-size:0.72rem; font-family:'JetBrains Mono',monospace; line-height:1.6; color:#f8fafc;">
+                                    Rainfall (95mm/hr) [OBS]<br>
+                                    &darr; Surface Runoff (14.2m³/s) [DER]<br>
+                                    &darr; Drain D-17 (165%) [SIM]<br>
+                                    &darr; <strong style="color:#ef4444;">Pipe P-44 (DN600 Bottleneck)</strong><br>
+                                    &darr; Road Inundated (0.42m)<br>
+                                    &darr; Ambulance Delayed (+14.2m)
+                                </div>
+                            </div>
+
+                            <!-- Panel 3: Causal X-Ray -->
+                            <div class="causal-panel-box" id="causalPanelXRay">
+                                <h5><span>⚡</span> Causal X-Ray Sensitivity</h5>
+                                <p style="font-size:0.75rem; color:var(--text-muted);">Sensitivity breakdown of failure pathway contributions:</p>
+                                <div class="insp-item"><span class="lbl">DRAIN &rarr; FLOOD</span><div class="val" style="color:#ef4444;">0.88 (Dominant)</div></div>
+                                <div class="insp-item"><span class="lbl">FLOOD &rarr; ROAD</span><div class="val" style="color:#fbbf24;">0.74 (Severe)</div></div>
+                                <div class="insp-item"><span class="lbl">ROAD &rarr; AMBULANCE</span><div class="val" style="color:#fbbf24;">0.69 (High)</div></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
                 <!-- VIEW 5: SENSOR NETWORK -->
                 <div class="view-panel" id="view-sensor-net">
                     <div class="governor-card">
-                        <h3>Real-Time IoT Sensor Telemetry & Drift Detection</h3>
-                        <p class="card-desc">Compares live physical sensor readings against numerical simulations to flag reality drift.</p>
-                        <div class="plan-metrics-grid" style="margin-top:10px;">
-                            <div class="pm-item"><span class="lbl">SENSOR WL-01</span><span class="val green">0.41 m (Delta: 0.01m)</span></div>
-                            <div class="pm-item"><span class="lbl">FLOW SENSOR F-44</span><span class="val highlight">4.3 m³/s (Throttled)</span></div>
-                            <div class="pm-item"><span class="lbl">THERMAL SENSOR T-12</span><span class="val">43.2 °C (Hotspot)</span></div>
-                            <div class="pm-item"><span class="lbl">DRIFT STATUS</span><span class="val green">GREEN (CALIBRATED)</span></div>
+                        <div class="card-header-styled">
+                            <div class="hdr-left">
+                                <span>📡</span>
+                                <h3>Real-Time IoT Sensor Telemetry & Drift Detection</h3>
+                            </div>
+                            <span class="status-tag live">MQTT 20 Hz ACTIVE</span>
                         </div>
+                        <p class="card-desc">Compares live physical sensor readings against numerical simulations to detect and prevent reality drift.</p>
+                        
+                        <!-- 6 Live IoT Sensor Cards Grid -->
+                        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-top:14px;">
+                            <div class="insp-item">
+                                <span class="lbl">WL-01 • WATER DEPTH</span>
+                                <div class="val" id="sensorWLVal" style="color:#38bdf8; font-size:1.05rem;">0.41 m</div>
+                                <span style="font-size:0.68rem; color:#34d399;">Residual: &Delta; = 0.01m (Calibrated)</span>
+                            </div>
+                            <div class="insp-item">
+                                <span class="lbl">F-44 • CONDUIT FLOW</span>
+                                <div class="val" id="sensorFlowVal" style="color:#f59e0b; font-size:1.05rem;">4.3 m³/s</div>
+                                <span style="font-size:0.68rem; color:#f87171;">Status: Near Capacity (DN600)</span>
+                            </div>
+                            <div class="insp-item">
+                                <span class="lbl">T-12 • THERMAL RADIOMETER</span>
+                                <div class="val" id="sensorTempVal" style="color:#ef4444; font-size:1.05rem;">43.2 °C</div>
+                                <span style="font-size:0.68rem; color:#fbbf24;">Status: Asphalt Heat Trap</span>
+                            </div>
+                            <div class="insp-item">
+                                <span class="lbl">AQ-09 • OPTICAL PM2.5</span>
+                                <div class="val" id="sensorSmokeVal" style="color:#a855f7; font-size:1.05rem;">42 µg/m³</div>
+                                <span style="font-size:0.68rem; color:#34d399;">Status: Moderate / Clear</span>
+                            </div>
+                            <div class="insp-item">
+                                <span class="lbl">TR-42 • TRAFFIC LOOP</span>
+                                <div class="val" id="sensorTrafVal" style="color:#c084fc; font-size:1.05rem;">88% V/C</div>
+                                <span style="font-size:0.68rem; color:#f87171;">Status: Gridlocked Queue</span>
+                            </div>
+                            <div class="insp-item">
+                                <span class="lbl">FB-01 • REALITY LOCK</span>
+                                <div class="val" id="sensorLockVal" style="color:#34d399; font-size:1.05rem;">LOCKED (GREEN)</div>
+                                <span style="font-size:0.68rem; color:#34d399;">Drift Alert Level: Normal</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
                         <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;">
                             <button class="btn-sidebar-create" style="flex:1; min-width:200px; height:38px; font-size:0.82rem;" onclick="pollLiveSensors()">
                                 <span>Poll Live IoT Telemetry</span>
@@ -500,22 +754,83 @@
                             <button class="btn-sidebar-create" style="flex:1; min-width:200px; height:38px; font-size:0.82rem;" onclick="checkRealityDrift()">
                                 <span>Verify Reality Feedback Lock</span>
                             </button>
+                            <button class="cam-btn" style="height:38px; font-size:0.82rem;" onclick="simulateSensorAnomaly()">
+                                <span>Simulate Conduit Blockage Anomaly</span>
+                            </button>
                         </div>
+
+                        <!-- Live SCADA Stream Terminal Log -->
+                        <div class="scada-console-wrap">
+                            <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Live SCADA Broker Telemetry Stream (MQTT / WebSocket 20Hz)</span>
+                            <div class="scada-stream-log" id="scadaLogTerminal">
+                                <div class="log-entry"><span class="log-time">[12:20:01]</span><span>WL-01: payload={water_depth_m: 0.412, battery: 98%} &rarr; sync OK</span></div>
+                                <div class="log-entry"><span class="log-time">[12:20:02]</span><span>F-44: payload={flow_m3s: 4.28, pressure_kpa: 142} &rarr; sync OK</span></div>
+                                <div class="log-entry"><span class="log-time">[12:20:03]</span><span>T-12: payload={surface_temp_c: 43.18, solar_w: 948} &rarr; sync OK</span></div>
+                                <div class="log-entry"><span class="log-time">[12:20:04]</span><span>FEEDBACK_LOCK: residual_error=0.012m &le; 0.05m tolerance &rarr; CALIBRATED</span></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
                 <!-- VIEW 6: REALITY PERCEPTION -->
                 <div class="view-panel" id="view-reality-scan">
                     <div class="governor-card">
-                        <h3>Deep Perception & Multimodal Inundation Scanner</h3>
-                        <p class="card-desc">Classifies aerial imagery, generates semantic spatial graphs, and identifies critical nodes.</p>
-                        <button class="btn-primary-gradient" style="margin-top:10px;" onclick="triggerScanPerception()">Run Regional Scan</button>
+                        <div class="card-header-styled">
+                            <div class="hdr-left">
+                                <span>🛰️</span>
+                                <h3>Deep Perception & Multimodal Inundation Scanner</h3>
+                            </div>
+                            <span class="status-tag live">17-STEP AUTOMATED PIPELINE</span>
+                        </div>
+                        <p class="card-desc">Classifies aerial imagery, generates semantic spatial graphs, and identifies critical infrastructure bottlenecks.</p>
+                        
+                        <!-- 17-Step Perception Pipeline Grid -->
+                        <div class="pipeline-steps-grid" id="pipelineStepsGrid">
+                            <div class="pipe-step-card done"><span class="pipe-step-num">01</span><span>Ingest Extents</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">02</span><span>Classification</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">03</span><span>Georeferencing</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">04</span><span>LiDAR Contours</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">05</span><span>Building Segment</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">06</span><span>Road Networks</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">07</span><span>Subsurface Pipes</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">08</span><span>Semantic Classes</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">09</span><span>Spatial Graph</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">10</span><span>Hydraulic Graph</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">11</span><span>WorldState Init</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">12</span><span>Causal DAG</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">13</span><span>3D Mesh Build</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">14</span><span>Baseline Sim</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">15</span><span>Critical Nodes</span><span style="color:#34d399">✓</span></div>
+                            <div class="pipe-step-card done"><span class="pipe-step-num">16</span><span>Data Gap Map</span><span style="color:#34d399">✓</span></div>
+                        </div>
+
+                        <!-- Scan Runner Button -->
+                        <div style="display:flex; gap:10px; margin-top:14px;">
+                            <button class="btn-primary-gradient" style="flex:1; height:42px;" onclick="triggerScanPerception()">
+                                <span>Re-Execute 17-Step Regional Perception Scan</span>
+                            </button>
+                        </div>
+
+                        <!-- Detected Critical Bottlenecks & Gaps Table -->
+                        <div class="plan-summary-box" style="margin-top:14px;">
+                            <h4>📍 Critical Infrastructure Bottlenecks & Priority Data Gaps</h4>
+                            <div class="inspector-metrics-grid" style="grid-template-columns: repeat(3, 1fr); margin-top:8px;">
+                                <div class="insp-item"><span class="lbl">CRITICAL NODE 1</span><div class="val" style="color:#ef4444;">Pipe P-44 Interceptor</div><span style="font-size:0.68rem; color:var(--text-muted);">Surcharge Risk: 106%</span></div>
+                                <div class="insp-item"><span class="lbl">CRITICAL NODE 2</span><div class="val" style="color:#ef4444;">Arterial Corridor R-42</div><span style="font-size:0.68rem; color:var(--text-muted);">Inundation: 0.42m</span></div>
+                                <div class="insp-item"><span class="lbl">PRIORITY GAP</span><div class="val" style="color:#fbbf24;">Outfall O-3 Flap Gate</div><span style="font-size:0.68rem; color:var(--text-muted);">Info Value: 0.94 / 1.0</span></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
             </div>
         </main>
     </div>
+
+    <!-- Glassmorphic Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
 
     <!-- Main Application Logic Script -->
     <script src="app.js"></script>
